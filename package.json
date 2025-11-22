@@ -1,0 +1,22 @@
+{
+  "name": "doclite",
+  "version": "1.0.0",
+  "description": "Next-generation client-side document toolbox platform",
+  "type": "module",
+  "scripts": {
+    "dev": "python -m http.server 8000",
+    "preview": "python -m http.server 8000"
+  },
+  "dependencies": {
+    "pdf-lib": "^1.17.1",
+    "pdfjs-dist": "^3.11.174",
+    "jszip": "^3.10.1"
+  },
+  "keywords": [
+    "pdf-tools",
+    "image-compressor",
+    "online-tools",
+    "client-side",
+    "no-backend"
+  ]
+}

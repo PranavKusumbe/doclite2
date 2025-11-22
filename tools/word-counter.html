@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Free word counter tool. Count words, characters, sentences, paragraphs. Real-time statistics for essays, articles, assignments.">
+    <meta name="keywords" content="word counter, character counter, word count tool, count words online, essay word counter, character count">
+    <link rel="canonical" href="https://doclite.com/tools/word-counter.html">
+    <title>Word Counter - Count Words, Characters, Sentences | DocLite</title>
+    <link rel="stylesheet" href="../css/global.css">   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navbar-container">
+            <a href="../index.html" class="navbar-logo">DocLite</a>
+            <ul class="navbar-menu">
+                <li><a href="../index.html" class="navbar-link">Home</a></li>
+                <li><a href="../index.html#text-tools" class="navbar-link active">Text Tools</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="ad-slot">Advertisement Space</div>
+
+    <div class="tool-page">
+        <div class="tool-header">
+            <div class="tool-header-icon"><i class="ti ti-calculator"></i></div>
+            <h1 class="tool-header-title">Word Counter</h1>
+            <p class="tool-header-description">
+                Count words, characters, sentences, and paragraphs in real-time. Perfect for essays, articles, and assignments.
+            </p>
+        </div>
+
+        <div style="background: white; border-radius: var(--radius-lg); padding: var(--space-lg); box-shadow: var(--shadow-sm); margin-bottom: var(--space-xl);">
+            <div class="stats-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: var(--space-md); margin-bottom: var(--space-lg);">
+                <div class="stat-card" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); padding: var(--space-md); border-radius: var(--radius-md); color: white; text-align: center;">
+                    <div style="font-size: 2rem; font-weight: 700;" id="wordCount">0</div>
+                    <div style="font-size: 0.9rem; opacity: 0.9;">Words</div>
+                </div>
+                <div class="stat-card" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); padding: var(--space-md); border-radius: var(--radius-md); color: white; text-align: center;">
+                    <div style="font-size: 2rem; font-weight: 700;" id="charCount">0</div>
+                    <div style="font-size: 0.9rem; opacity: 0.9;">Characters</div>
+                </div>
+                <div class="stat-card" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%); padding: var(--space-md); border-radius: var(--radius-md); color: white; text-align: center;">
+                    <div style="font-size: 2rem; font-weight: 700;" id="charNoSpaceCount">0</div>
+                    <div style="font-size: 0.9rem; opacity: 0.9;">Chars (no spaces)</div>
+                </div>
+                <div class="stat-card" style="background: linear-gradient(135deg, #fa709a 0%, #fee140 100%); padding: var(--space-md); border-radius: var(--radius-md); color: white; text-align: center;">
+                    <div style="font-size: 2rem; font-weight: 700;" id="sentenceCount">0</div>
+                    <div style="font-size: 0.9rem; opacity: 0.9;">Sentences</div>
+                </div>
+                <div class="stat-card" style="background: linear-gradient(135deg, #30cfd0 0%, #330867 100%); padding: var(--space-md); border-radius: var(--radius-md); color: white; text-align: center;">
+                    <div style="font-size: 2rem; font-weight: 700;" id="paragraphCount">0</div>
+                    <div style="font-size: 0.9rem; opacity: 0.9;">Paragraphs</div>
+                </div>
+                <div class="stat-card" style="background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%); padding: var(--space-md); border-radius: var(--radius-md); color: #2d3748; text-align: center;">
+                    <div style="font-size: 2rem; font-weight: 700;" id="readTime">0</div>
+                    <div style="font-size: 0.9rem; opacity: 0.8;">Min Read</div>
+                </div>
+            </div>
+
+            <textarea id="textInput" placeholder="Start typing or paste your text here..." 
+                style="width: 100%; min-height: 400px; padding: var(--space-md); border: 2px solid var(--color-bg); border-radius: var(--radius-md); font-family: var(--font-sans); font-size: 1rem; line-height: 1.6; resize: vertical;"
+            ></textarea>
+
+            <div style="display: flex; gap: var(--space-sm); margin-top: var(--space-md); flex-wrap: wrap;">
+                <button id="clearBtn" class="btn btn-secondary">Clear Text</button>
+                <button id="copyBtn" class="btn btn-secondary">?? Copy Text</button>
+                <button id="uppercaseBtn" class="btn btn-secondary">UPPERCASE</button>
+                <button id="lowercaseBtn" class="btn btn-secondary">lowercase</button>
+                <button id="titlecaseBtn" class="btn btn-secondary">Title Case</button>
+            </div>
+        </div>
+
+        <div class="ad-slot">Advertisement Space</div>
+
+        <div class="faq-section">
+            <h2 class="faq-title">Frequently Asked Questions</h2>
+            <div class="faq-item">
+                <h3 class="faq-question">How accurate is the word counter?</h3>
+                <p class="faq-answer">Our word counter uses industry-standard algorithms to count words, matching the methods used by major word processors like Microsoft Word and Google Docs.</p>
+            </div>
+            <div class="faq-item">
+                <h3 class="faq-question">Does it count hyphenated words correctly?</h3>
+                <p class="faq-answer">Yes! Hyphenated words are counted as single words, which is the standard practice in most writing contexts.</p>
+            </div>
+            <div class="faq-item">
+                <h3 class="faq-question">How is reading time calculated?</h3>
+                <p class="faq-answer">Reading time is calculated based on an average reading speed of 200-250 words per minute, which is typical for adult readers.</p>
+            </div>
+        </div>
+
+        
+    </div>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-column">
+                <h3>DocLite</h3>
+                <p class="footer-description">Free online document tools. Convert, compress, and optimize files directly in your browser.</p>
+            </div>
+            <div class="footer-column">
+                <h3>Quick Links</h3>
+                <ul class="footer-links">
+                    <li><a href="../index.html" class="footer-link">Home</a></li>
+                    <li><a href="../index.html#pdf-tools" class="footer-link">PDF Tools</a></li>
+                    <li><a href="../index.html#image-tools" class="footer-link">Image Tools</a></li>
+                    <li><a href="../index.html#text-tools" class="footer-link">Text Tools</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Popular Tools</h3>
+                <ul class="footer-links">
+                    <li><a href="compress-pdf.html" class="footer-link">Compress PDF</a></li>
+                    <li><a href="compress-image.html" class="footer-link">Compress Image</a></li>
+                    <li><a href="pdf-to-jpg.html" class="footer-link">PDF to JPG</a></li>
+                    <li><a href="merge-pdf.html" class="footer-link">Merge PDF</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <h4>&copy; 2025 DocLite. All rights reserved.</h4>
+        </div>
+    </footer>
+
+    <script src="../js/components.js"></script>
+    <script src="../js/word-counter.js"></script>
+</body>
+</html>
+

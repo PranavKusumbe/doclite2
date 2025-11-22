@@ -1,0 +1,32 @@
+<!DOCTYPE html><html><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>JPG to PDF | DocLite</title><link rel="stylesheet" href="../css/global.css">   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css"></head><body>    <nav class="navbar">
+        <div class="navbar-container">
+            <a href="../index.html" class="navbar-logo">DocLite</a>
+            <ul class="navbar-menu">
+                <li><a href="../index.html" class="navbar-link">Home</a></li>
+                <li><a href="../index.html#pdf-tools" class="navbar-link">PDF Tools</a></li>
+                <li><a href="../index.html#image-tools" class="navbar-link">Image Tools</a></li>
+                <li><a href="../index.html#text-tools" class="navbar-link">Text Tools</a></li>
+                <li><a href="../index.html#dev-tools" class="navbar-link">Developer</a></li>
+            </ul>
+        </div>
+    </nav><div class="tool-page"><div class="tool-header"><div class="tool-header-icon"><i class="ti ti-file-text"></i></div><h1>JPG to PDF</h1></div><div id="uploadArea"></div><div id="fileListSection" class="hidden"></div><div style="text-align:center;margin:2rem;"><button id="convertBtn" class="btn btn-primary btn-large hidden">Convert to PDF</button></div><div id="resultSection" class="hidden"><h2>PDF Ready</h2><button id="downloadBtn" class="btn btn-primary">Download PDF</button></div></div>    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-column">
+                <h3>DocLite</h3>
+                <p class="footer-description">Free online document tools. Convert, compress, and optimize files directly in your browser.</p>
+            </div>
+            <div class="footer-column">
+                <h3>Company</h3>
+                <ul class="footer-links">
+                    <li><a href="../about.html" class="footer-link">About Us</a></li>
+                    <li><a href="../contact.html" class="footer-link">Contact</a></li>
+                    <li><a href="../terms.html" class="footer-link">Terms of Service</a></li>
+                    <li><a href="../privacy.html" class="footer-link">Privacy Policy</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <h4>&copy; 2025 DocLite. All rights reserved.</h4>
+        </div>
+    </footer><script src="https://cdnjs.cloudflare.com/ajax/libs/pdf-lib/1.17.1/pdf-lib.min.js"></script><script src="../js/components.js"></script><script>(function(){let f=[];const{PDFDocument}=PDFLib;document.getElementById('uploadArea').appendChild(DocLiteComponents.createUploadArea({accept:'image/*',multiple:true,onFileSelect:h=>{f=h.filter(x=>x.type.startsWith('image/'));if(f.length){displayList();document.getElementById('convertBtn').classList.remove('hidden');}}}));function displayList(){const s=document.getElementById('fileListSection');s.innerHTML='';s.appendChild(DocLiteComponents.createFileList(f,{onRemove:i=>{f.splice(i,1);f.length?displayList():(s.classList.add('hidden'),document.getElementById('convertBtn').classList.add('hidden'));},onRemoveAll:()=>{f=[];s.classList.add('hidden');document.getElementById('convertBtn').classList.add('hidden');}}));s.classList.remove('hidden');}document.getElementById('convertBtn').onclick=async()=>{DocLiteComponents.showLoading();const pdfDoc=await PDFDocument.create();for(const file of f){const bytes=await file.arrayBuffer();let img;if(file.type==='image/jpeg'||file.type==='image/jpg')img=await pdfDoc.embedJpg(bytes);else if(file.type==='image/png')img=await pdfDoc.embedPng(bytes);else{const reader=new FileReader();const dataUrl=await new Promise(resolve=>{reader.onload=e=>resolve(e.target.result);reader.readAsDataURL(file);});const tempImg=new Image();await new Promise(resolve=>{tempImg.onload=resolve;tempImg.src=dataUrl;});const canvas=document.createElement('canvas');canvas.width=tempImg.width;canvas.height=tempImg.height;canvas.getContext('2d').drawImage(tempImg,0,0);const jpegDataUrl=canvas.toDataURL('image/jpeg',0.95);const jpegBytes=await fetch(jpegDataUrl).then(r=>r.arrayBuffer());img=await pdfDoc.embedJpg(jpegBytes);}const page=pdfDoc.addPage([img.width,img.height]);page.drawImage(img,{x:0,y:0,width:img.width,height:img.height});}const pdfBytes=await pdfDoc.save();const blob=new Blob([pdfBytes],{type:'application/pdf'});window.pdfBlob=blob;document.getElementById('resultSection').classList.remove('hidden');document.getElementById('downloadBtn').onclick=()=>DocLiteComponents.downloadFile(blob,'converted.pdf');DocLiteComponents.hideLoading();};})();</script></body></html>
+

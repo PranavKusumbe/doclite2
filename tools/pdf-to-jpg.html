@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Convert PDF to JPG online free. Extract all pages as high-quality images. No upload, works offline. Perfect for sharing PDF pages as images.">
+    <meta name="keywords" content="pdf to jpg, convert pdf to image, pdf to jpeg online free, extract pdf pages as images, pdf page to jpg converter">
+    <link rel="canonical" href="https://doclite.com/tools/pdf-to-jpg.html">
+    <title>PDF to JPG Converter - Extract PDF Pages as Images | DocLite</title>
+    <link rel="stylesheet" href="../css/global.css">   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
+    
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "PDF to JPG Converter",
+      "applicationCategory": "UtilityApplication",
+      "offers": { "@type": "Offer", "price": "0" },
+      "description": "Convert PDF documents to JPG images. Extract all pages or selected pages as high-quality JPEG files."
+    }
+    </script>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navbar-container">
+            <a href="../index.html" class="navbar-logo">DocLite</a>
+            <ul class="navbar-menu">
+                <li><a href="../index.html" class="navbar-link">Home</a></li>
+                <li><a href="../index.html#pdf-tools" class="navbar-link active">PDF Tools</a></li>
+                <li><a href="../index.html#image-tools" class="navbar-link">Image Tools</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="ad-slot">Advertisement Space</div>
+
+    <div class="tool-page">
+        <div class="tool-header">
+            <div class="tool-header-icon"><i class="ti ti-camera"></i></div>
+            <h1 class="tool-header-title">PDF to JPG Converter</h1>
+            <p class="tool-header-description">
+                Convert PDF pages to high-quality JPG images. Extract all pages or specific ones. 100% client-side processing.
+            </p>
+        </div>
+
+        <div id="uploadSection">
+            <div id="uploadArea"></div>
+        </div>
+
+        <div id="controlsSection" class="hidden">
+            <div class="controls">
+                <div class="control-group">
+                    <label class="control-label">Image Quality: <span id="quality-value">85</span>%</label>
+                    <input type="range" class="control-slider" id="qualitySlider" min="50" max="100" value="85" step="5">
+                </div>
+                <div class="control-group">
+                    <label class="control-label">Resolution (DPI)</label>
+                    <select class="control-select" id="dpiSelect">
+                        <option value="72">72 DPI (Screen)</option>
+                        <option value="150" selected>150 DPI (Standard)</option>
+                        <option value="300">300 DPI (High Quality)</option>
+                    </select>
+                </div>
+            </div>
+            <div style="text-align: center; margin-top: 2rem;">
+                <button id="convertBtn" class="btn btn-primary btn-large">
+                    <i class="ti ti-jpg"></i> Convert to JPG
+                </button>
+            </div>
+        </div>
+
+        <div id="fileListSection" class="hidden"></div>
+        <div id="progressSection"></div>
+
+        <div class="ad-slot">Advertisement Space</div>
+
+        <div id="resultsSection" class="hidden">
+            <h2 class="text-center">Converted Images</h2>
+            <div id="resultsGrid" class="results-grid"></div>
+            <div style="text-align: center; margin-top: 2rem;">
+                <button id="downloadAllBtn" class="btn btn-primary btn-large"><i class="ti ti-download"></i> Download All as ZIP</button>
+            </div>
+        </div>
+
+        <div class="faq-section">
+            <h2 class="faq-title">Frequently Asked Questions</h2>
+            <div class="faq-item">
+                <h3 class="faq-question">How do I convert PDF to JPG online free?</h3>
+                <p class="faq-answer">Simply upload your PDF file, choose the quality settings, and click convert. All pages will be extracted as separate JPG images that you can download individually or as a ZIP file.</p>
+            </div>
+            <div class="faq-item">
+                <h3 class="faq-question">Can I convert multiple PDFs at once?</h3>
+                <p class="faq-answer">Yes! Upload multiple PDF files and they will all be processed. Each PDF's pages will be converted to JPG images.</p>
+            </div>
+            <div class="faq-item">
+                <h3 class="faq-question">What's the best DPI setting?</h3>
+                <p class="faq-answer">For screen viewing, 72 or 150 DPI works well. For printing or high-quality needs, use 300 DPI. Higher DPI creates larger file sizes.</p>
+            </div>
+        </div>
+
+        
+    </div>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-column">
+                <h3>DocLite</h3>
+                <p class="footer-description">Free online document tools. Convert, compress, and optimize files directly in your browser.</p>
+            </div>
+            <div class="footer-column">
+                <h3>Quick Links</h3>
+                <ul class="footer-links">
+                    <li><a href="../index.html" class="footer-link">Home</a></li>
+                    <li><a href="../index.html#pdf-tools" class="footer-link">PDF Tools</a></li>
+                    <li><a href="../index.html#image-tools" class="footer-link">Image Tools</a></li>
+                    <li><a href="../index.html#text-tools" class="footer-link">Text Tools</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Popular Tools</h3>
+                <ul class="footer-links">
+                    <li><a href="compress-pdf.html" class="footer-link">Compress PDF</a></li>
+                    <li><a href="compress-image.html" class="footer-link">Compress Image</a></li>
+                    <li><a href="pdf-to-jpg.html" class="footer-link">PDF to JPG</a></li>
+                    <li><a href="merge-pdf.html" class="footer-link">Merge PDF</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <h4>&copy; 2025 DocLite. All rights reserved.</h4>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+    <script src="../js/components.js"></script>
+    <script src="../js/pdf-to-jpg.js"></script>
+</body>
+</html>
+

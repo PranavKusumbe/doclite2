@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Compress PDF | DocLite</title>
+    <link rel="stylesheet" href="../css/global.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navbar-container">
+            <a href="../index.html" class="navbar-logo">DocLite</a>
+            <ul class="navbar-menu">
+                <li><a href="../index.html" class="navbar-link">Home</a></li>
+                <li><a href="../index.html#pdf-tools" class="navbar-link">PDF Tools</a></li>
+                <li><a href="../index.html#image-tools" class="navbar-link">Image Tools</a></li>
+                <li><a href="../index.html#text-tools" class="navbar-link">Text Tools</a></li>
+                <li><a href="../index.html#dev-tools" class="navbar-link">Developer</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="tool-page">
+        <div class="tool-header">
+            <div class="tool-header-icon"><i class="ti ti-arrows-minimize"></i></div>
+            <h1>Compress PDF</h1>
+        </div>
+
+        <div id="uploadArea"></div>
+
+        <div id="controlsSection" class="hidden controls">
+            <h3 style="margin-bottom: 2rem; font-size: 1.5rem; font-weight: 800;">Compression Settings</h3>
+            
+            <div class="control-group" style="margin-bottom: 2rem;">
+                <p style="margin-bottom: 1rem; color: var(--color-text); font-size: 1rem;">
+                    We will automatically optimize your PDF to reduce file size while maintaining readability.
+                </p>
+            </div>
+            
+            <button id="compressBtn" class="btn btn-primary btn-large" style="width: 100%; font-size: 1.2rem; padding: 1.25rem;">
+                <i class="ti ti-arrows-minimize"></i>
+                Compress PDF
+            </button>
+        </div>
+
+        <div id="resultsSection" class="hidden" style="margin-top: 3rem;">
+            <h2 style="margin-bottom: 2rem; font-size: 2rem; font-weight: 800; text-align: center;">Compressed PDFs</h2>
+            <div id="resultsGrid" class="results-grid"></div>
+            <div style="text-align: center; margin-top: 2rem;">
+                <button id="downloadAllBtn" class="btn btn-primary btn-large">
+                    <i class="ti ti-download"></i>
+                    Download All
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-column">
+                <h3>DocLite</h3>
+                <p class="footer-description">Free online document tools. Convert, compress, and optimize files directly in your browser.</p>
+            </div>
+            <div class="footer-column">
+                <h3>Company</h3>
+                <ul class="footer-links">
+                    <li><a href="../about.html" class="footer-link">About Us</a></li>
+                    <li><a href="../contact.html" class="footer-link">Contact</a></li>
+                    <li><a href="../terms.html" class="footer-link">Terms of Service</a></li>
+                    <li><a href="../privacy.html" class="footer-link">Privacy Policy</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <h4>&copy; 2025 DocLite. All rights reserved.</h4>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf-lib/1.17.1/pdf-lib.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+    <script src="../js/components.js"></script>
+    <script>
+        (function() {
+            let selectedFiles = [];
+            let compressedResults = [];
+
+            // Configure pdf.js worker
+            if (typeof pdfjsLib !== 'undefined') {
+                pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
+            }
+
+            const { PDFDocument } = PDFLib;
+
+            // Initialize Upload Area
+            document.getElementById('uploadArea').appendChild(
+                DocLiteComponents.createUploadArea({
+                    accept: 'application/pdf',
+                    multiple: true,
+                    onFileSelect: (files) => {
+                        selectedFiles = Array.from(files);
+                        // Filter for max size 500MB
+                        const maxSize = 500 * 1024 * 1024;
+                        const validFiles = selectedFiles.filter(f => f.size <= maxSize);
+                        
+                        if (validFiles.length < selectedFiles.length) {
+                            alert('Some files were skipped because they exceed the 500MB limit.');
+                        }
+                        
+                        selectedFiles = validFiles;
+
+                        if (selectedFiles.length > 0) {
+                            document.getElementById('controlsSection').classList.remove('hidden');
+                        }
+                    }
+                })
+            );
+
+            document.getElementById('compressBtn').onclick = async () => {
+                DocLiteComponents.showLoading('Compressing PDFs...');
+                compressedResults = [];
+                const resultsGrid = document.getElementById('resultsGrid');
+                resultsGrid.innerHTML = '';
+
+                try {
+                    for (const file of selectedFiles) {
+                        const result = await compressPDF(file);
+                        compressedResults.push(result);
+                        
+                        const div = document.createElement('div');
+                        div.className = 'result-item';
+                        div.innerHTML = `
+                            <div style="text-align: center; margin-bottom: 1rem;">
+                                <i class="ti ti-file-zip" style="font-size: 3rem; color: #667eea;"></i>
+                            </div>
+                            <div class="result-filename" style="font-weight: 700; font-size: 0.95rem; margin-bottom: 0.5rem; word-break: break-word;">${result.filename}</div>
+                            <div style="font-size: 0.85rem; color: #718096; margin-bottom: 1rem; text-align: center;">
+                                ${formatSize(file.size)} → <strong>${formatSize(result.blob.size)}</strong>
+                                <span style="color: #48bb78; margin-left: 0.5rem;">(-${Math.round((1 - result.blob.size/file.size)*100)}%)</span>
+                            </div>
+                            <button class="btn btn-primary" style="width: 100%; padding: 0.75rem 1.5rem; font-size: 0.95rem; font-weight: 700;">
+                                <i class="ti ti-download"></i> Download
+                            </button>
+                        `;
+                        div.querySelector('button').onclick = () => DocLiteComponents.downloadFile(result.blob, result.filename);
+                        resultsGrid.appendChild(div);
+                    }
+
+                    document.getElementById('resultsSection').classList.remove('hidden');
+                    setTimeout(() => {
+                        document.getElementById('resultsSection').scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }, 100);
+
+                } catch (error) {
+                    console.error(error);
+                    alert('An error occurred during compression.');
+                } finally {
+                    DocLiteComponents.hideLoading();
+                }
+            };
+
+            document.getElementById('downloadAllBtn').onclick = () => {
+                DocLiteComponents.downloadAsZip(compressedResults, 'compressed_pdfs.zip');
+            };
+
+            function formatSize(bytes) {
+                if (bytes === 0) return '0 Bytes';
+                const k = 1024;
+                const sizes = ['Bytes', 'KB', 'MB', 'GB'];
+                const i = Math.floor(Math.log(bytes) / Math.log(k));
+                return parseFloat((bytes / Math.pow(k, i)).toFixed(2)) + ' ' + sizes[i];
+            }
+
+            async function compressPDF(file) {
+                const bytes = await file.arrayBuffer();
+                
+                // Load PDF
+                const originalPdfDoc = await PDFDocument.load(bytes);
+                const pageCount = originalPdfDoc.getPageCount();
+                const loadingTask = pdfjsLib.getDocument({ data: bytes });
+                const pdf = await loadingTask.promise;
+
+                // Create new PDF
+                const compressedPdf = await PDFDocument.create();
+
+                // Compression settings
+                // Scale 1.5 ensures text remains readable (approx 108-144 DPI depending on original)
+                // Quality 0.7 gives good compression
+                const scale = 1.5; 
+                const quality = 0.7;
+
+                for (let i = 1; i <= pageCount; i++) {
+                    const page = await pdf.getPage(i);
+                    const viewport = page.getViewport({ scale: scale });
+                    const canvas = document.createElement('canvas');
+                    canvas.width = viewport.width;
+                    canvas.height = viewport.height;
+                    const ctx = canvas.getContext('2d');
+                    
+                    // White background
+                    ctx.fillStyle = '#FFFFFF';
+                    ctx.fillRect(0, 0, canvas.width, canvas.height);
+                    
+                    await page.render({
+                        canvasContext: ctx,
+                        viewport: viewport,
+                        intent: 'print'
+                    }).promise;
+
+                    const imgBlob = await new Promise(r => canvas.toBlob(r, 'image/jpeg', quality));
+                    const imgBytes = await imgBlob.arrayBuffer();
+                    const jpgImage = await compressedPdf.embedJpg(imgBytes);
+                    
+                    const pdfPage = compressedPdf.addPage([viewport.width, viewport.height]);
+                    pdfPage.drawImage(jpgImage, {
+                        x: 0,
+                        y: 0,
+                        width: viewport.width,
+                        height: viewport.height
+                    });
+                }
+
+                const pdfBytes = await compressedPdf.save();
+                const blob = new Blob([pdfBytes], { type: 'application/pdf' });
+                
+                // If compression made it larger (unlikely with these settings but possible for text-only PDFs), return original
+                if (blob.size >= file.size) {
+                     return { 
+                        blob: new Blob([bytes], { type: 'application/pdf' }), 
+                        filename: file.name 
+                    };
+                }
+
+                return { 
+                    blob: blob, 
+                    filename: file.name.replace('.pdf', '_compressed.pdf') 
+                };
+            }
+        })();
+    </script>
+</body>
+</html>
+

@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DocLite Tool Testing Dashboard</title>
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
+    <style>
+        .test-dashboard {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 2rem;
+        }
+        .test-section {
+            background: white;
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        .test-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        .test-item {
+            padding: 1rem;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        .test-item:hover {
+            border-color: var(--primary);
+            transform: translateY(-2px);
+        }
+        .test-item.tested {
+            border-color: #4caf50;
+            background: rgba(76, 175, 80, 0.1);
+        }
+        .test-item.error {
+            border-color: #f44336;
+            background: rgba(244, 67, 54, 0.1);
+        }
+        .status-badge {
+            display: inline-block;
+            padding: 0.25rem 0.5rem;
+            border-radius: 4px;
+            font-size: 0.85rem;
+            margin-top: 0.5rem;
+        }
+        .status-pending {
+            background: #ffa726;
+            color: white;
+        }
+        .status-pass {
+            background: #4caf50;
+            color: white;
+        }
+        .status-fail {
+            background: #f44336;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navbar-container">
+            <a href="index.html" class="navbar-logo">
+                
+                DocLite Testing
+            </a>
+        </div>
+    </nav>
+
+    <div class="test-dashboard">
+        <h1>🧪 Tool Testing Dashboard</h1>
+        <p>Click on each tool to test. Check for popups, icons, and functionality.</p>
+
+        <div class="test-section">
+            <h2>🖥️ Backend-Dependent Tools (Require Server)</h2>
+            <p>These tools need the backend server running on port 3000</p>
+            <div class="test-grid" id="backendTools"></div>
+        </div>
+
+        <div class="test-section">
+            <h2>🌐 Client-Side Tools (Browser Only)</h2>
+            <p>These tools work entirely in the browser</p>
+            <div class="test-grid" id="clientTools"></div>
+        </div>
+
+        <div class="test-section">
+            <h2>🤖 AI-Powered Tools</h2>
+            <p>These tools use TensorFlow.js or other AI models</p>
+            <div class="test-grid" id="aiTools"></div>
+        </div>
+    </div>
+
+    <script>
+        const backendTools = [
+            { name: 'Audio Compressor', url: 'tools/audio-compressor.html', icon: 'ti-volume' },
+            { name: 'Video to GIF', url: 'tools/video-to-gif.html', icon: 'ti-movie' },
+            { name: 'Word to PDF', url: 'tools/word-to-pdf.html', icon: 'ti-file-description' },
+            { name: 'PDF to Word', url: 'tools/pdf-to-word.html', icon: 'ti-file-word' },
+            { name: 'Protect PDF', url: 'tools/protect-pdf.html', icon: 'ti-lock' },
+            { name: 'Remove Watermark', url: 'tools/remove-watermark.html', icon: 'ti-eraser' }
+        ];
+
+        const clientTools = [
+            { name: 'Compress PDF', url: 'tools/compress-pdf.html', icon: 'ti-file-zip' },
+            { name: 'Compress Image', url: 'tools/compress-image.html', icon: 'ti-photo' },
+            { name: 'Merge PDF', url: 'tools/merge-pdf.html', icon: 'ti-files' },
+            { name: 'Split PDF', url: 'tools/split-pdf.html', icon: 'ti-file-scissors' },
+            { name: 'PDF to JPG', url: 'tools/pdf-to-jpg.html', icon: 'ti-file-type-jpg' },
+            { name: 'JPG to PDF', url: 'tools/jpg-to-pdf.html', icon: 'ti-file-type-pdf' },
+            { name: 'Color Picker', url: 'tools/color-picker.html', icon: 'ti-eyedropper' },
+            { name: 'Crop Image', url: 'tools/crop-image.html', icon: 'ti-crop' },
+            { name: 'Rotate Image', url: 'tools/rotate-image.html', icon: 'ti-rotate' },
+            { name: 'QR Generator', url: 'tools/qr-generator.html', icon: 'ti-qrcode' }
+        ];
+
+        const aiTools = [
+            { name: 'Background Remover', url: 'tools/background-remover.html', icon: 'ti-eraser' }
+        ];
+
+        function createTestItem(tool) {
+            return `
+                <div class="test-item" onclick="window.open('${tool.url}', '_blank')">
+                    <i class="ti ${tool.icon}" style="font-size:2rem;color:var(--primary);"></i>
+                    <h4 style="margin:0.5rem 0;">${tool.name}</h4>
+                    <span class="status-badge status-pending">Click to Test</span>
+                </div>
+            `;
+        }
+
+        document.getElementById('backendTools').innerHTML = backendTools.map(createTestItem).join('');
+        document.getElementById('clientTools').innerHTML = clientTools.map(createTestItem).join('');
+        document.getElementById('aiTools').innerHTML = aiTools.map(createTestItem).join('');
+    </script>
+</body>
+</html>

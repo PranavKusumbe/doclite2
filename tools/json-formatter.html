@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Free online JSON formatter and validator. Beautify, minify, and validate JSON data instantly. Fix JSON syntax errors.">
+    <meta name="keywords" content="json formatter, json validator, beautify json, minify json, json prettify, json parser online">
+    <link rel="canonical" href="https://doclite.com/tools/json-formatter.html">
+    <title>JSON Formatter & Validator - Beautify JSON Online | DocLite</title>
+    <link rel="stylesheet" href="../css/global.css">   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navbar-container">
+            <a href="../index.html" class="navbar-logo">DocLite</a>
+            <ul class="navbar-menu">
+                <li><a href="../index.html" class="navbar-link">Home</a></li>
+                <li><a href="../index.html#dev-tools" class="navbar-link active">Developer</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="ad-slot">Advertisement Space</div>
+
+    <div class="tool-page">
+        <div class="tool-header">
+            <div class="tool-header-icon"><i class="ti ti-braces"></i></div>
+            <h1 class="tool-header-title">JSON Formatter</h1>
+            <p class="tool-header-description">
+                Format, validate, and beautify JSON data. Fix syntax errors and minify for production.
+            </p>
+        </div>
+
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-lg); margin-bottom: var(--space-xl);">
+            <div>
+                <h3 style="margin-bottom: var(--space-md);">Input JSON</h3>
+                <textarea id="jsonInput" placeholder='Paste your JSON here, e.g., {"name": "John", "age": 30}' 
+                    style="width: 100%; min-height: 400px; padding: var(--space-md); border: 2px solid var(--color-bg); border-radius: var(--radius-md); font-family: var(--font-mono); font-size: 0.9rem; line-height: 1.6; resize: vertical;"
+                ></textarea>
+            </div>
+
+            <div>
+                <h3 style="margin-bottom: var(--space-md);">Formatted Output</h3>
+                <textarea id="jsonOutput" readonly 
+                    style="width: 100%; min-height: 400px; padding: var(--space-md); border: 2px solid var(--color-bg); border-radius: var(--radius-md); font-family: var(--font-mono); font-size: 0.9rem; line-height: 1.6; resize: vertical; background: var(--color-bg);"
+                ></textarea>
+            </div>
+        </div>
+
+        <div style="display: flex; gap: var(--space-sm); margin-bottom: var(--space-md); flex-wrap: wrap; justify-content: center;">
+            <button id="formatBtn" class="btn btn-primary">
+                ? Format & Beautify
+            </button>
+            <button id="minifyBtn" class="btn btn-secondary">
+                ??? Minify
+            </button>
+            <button id="validateBtn" class="btn btn-secondary">
+                ? Validate Only
+            </button>
+            <button id="copyBtn" class="btn btn-secondary">
+                ?? Copy Output
+            </button>
+            <button id="clearBtn" class="btn btn-secondary">
+                ?? Clear
+            </button>
+        </div>
+
+        <div id="statusMessage" style="padding: var(--space-md); border-radius: var(--radius-md); margin-bottom: var(--space-lg); display: none;"></div>
+
+        <div class="ad-slot">Advertisement Space</div>
+
+        <div style="background: white; border-radius: var(--radius-lg); padding: var(--space-lg); margin-bottom: var(--space-xl); box-shadow: var(--shadow-sm);">
+            <h3 style="margin-bottom: var(--space-md);">Options</h3>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: var(--space-md);">
+                <div>
+                    <label class="control-label">Indentation</label>
+                    <select id="indentSelect" class="control-select">
+                        <option value="2" selected>2 spaces</option>
+                        <option value="4">4 spaces</option>
+                        <option value="tab">Tab</option>
+                    </select>
+                </div>
+                <div>
+                    <label class="control-label">Sort Keys</label>
+                    <select id="sortKeys" class="control-select">
+                        <option value="false" selected>No</option>
+                        <option value="true">Yes</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <div class="faq-section">
+            <h2 class="faq-title">Frequently Asked Questions</h2>
+            <div class="faq-item">
+                <h3 class="faq-question">What does JSON formatting do?</h3>
+                <p class="faq-answer">JSON formatting (or beautifying) adds proper indentation, line breaks, and spacing to make JSON data human-readable. This is essential for debugging and understanding complex JSON structures.</p>
+            </div>
+            <div class="faq-item">
+                <h3 class="faq-question">How do I fix JSON syntax errors?</h3>
+                <p class="faq-answer">Click "Validate Only" to see detailed error messages. Common issues include missing commas, unquoted keys, trailing commas, and mismatched brackets. The error message will point you to the problematic line.</p>
+            </div>
+            <div class="faq-item">
+                <h3 class="faq-question">When should I minify JSON?</h3>
+                <p class="faq-answer">Minify JSON when you need to reduce file size for production APIs or storage. Minified JSON removes all unnecessary whitespace, making it compact but harder to read.</p>
+            </div>
+            <div class="faq-item">
+                <h3 class="faq-question">Can I sort JSON keys alphabetically?</h3>
+                <p class="faq-answer">Yes! Select "Yes" in the "Sort Keys" option and click Format. This will alphabetically sort all object keys, making it easier to compare JSON documents.</p>
+            </div>
+        </div>
+
+        
+    </div>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-column">
+                <h3>DocLite</h3>
+                <p class="footer-description">Free online document tools. Convert, compress, and optimize files directly in your browser.</p>
+            </div>
+            <div class="footer-column">
+                <h3>Quick Links</h3>
+                <ul class="footer-links">
+                    <li><a href="../index.html" class="footer-link">Home</a></li>
+                    <li><a href="../index.html#pdf-tools" class="footer-link">PDF Tools</a></li>
+                    <li><a href="../index.html#image-tools" class="footer-link">Image Tools</a></li>
+                    <li><a href="../index.html#text-tools" class="footer-link">Text Tools</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Popular Tools</h3>
+                <ul class="footer-links">
+                    <li><a href="compress-pdf.html" class="footer-link">Compress PDF</a></li>
+                    <li><a href="compress-image.html" class="footer-link">Compress Image</a></li>
+                    <li><a href="pdf-to-jpg.html" class="footer-link">PDF to JPG</a></li>
+                    <li><a href="merge-pdf.html" class="footer-link">Merge PDF</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <h4>&copy; 2025 DocLite. All rights reserved.</h4>
+        </div>
+    </footer>
+
+    <script src="../js/components.js"></script>
+    <script src="../js/json-formatter.js"></script>
+</body>
+</html>
+

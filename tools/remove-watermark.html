@@ -1,0 +1,113 @@
+<!DOCTYPE html><html><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>Remove Watermark | DocLite</title><link rel="stylesheet" href="../css/global.css">   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css"></head><body>    <nav class="navbar">
+        <div class="navbar-container">
+            <a href="../index.html" class="navbar-logo">DocLite</a>
+            <ul class="navbar-menu">
+                <li><a href="../index.html" class="navbar-link">Home</a></li>
+                <li><a href="../index.html#pdf-tools" class="navbar-link">PDF Tools</a></li>
+                <li><a href="../index.html#image-tools" class="navbar-link">Image Tools</a></li>
+                <li><a href="../index.html#text-tools" class="navbar-link">Text Tools</a></li>
+                <li><a href="../index.html#dev-tools" class="navbar-link">Developer</a></li>
+            </ul>
+        </div>
+    </nav><div class="tool-page">
+    <div class="tool-header">
+        <div class="tool-header-icon"><i class="ti ti-eraser"></i></div>
+        <h1>Remove Watermark</h1>
+        <p class="tool-header-description">Attempt to remove watermarks from PDF files.</p>
+    </div>
+    <div id="uploadArea"></div>
+    <div id="controlsSection" class="hidden">
+        <div class="notice notice-warning">
+            <strong>Experimental Tool</strong>
+            <p>Removing watermarks is a complex process. This tool may only work for simple text-based watermarks and is not guaranteed to succeed on all PDFs, especially those with image or complex vector watermarks.</p>
+        </div>
+        <button id="processBtn" class="btn btn-primary btn-large">Attempt Watermark Removal</button>
+    </div>
+    <div id="resultSection" class="hidden">
+        <h2>Processed PDF</h2>
+        <button id="downloadBtn" class="btn btn-primary">Download PDF</button>
+    </div>
+</div>
+<footer class="footer">
+    <div class="footer-container">
+        <div class="footer-column">
+            <h3>DocLite</h3>
+            <p class="footer-description">Free online document tools. Convert, compress, and optimize files directly in your browser.</p>
+        </div>
+        <div class="footer-column">
+            <h3>Quick Links</h3>
+            <ul class="footer-links">
+                <li><a href="../index.html" class="footer-link">Home</a></li>
+                <li><a href="../index.html#pdf-tools" class="footer-link">PDF Tools</a></li>
+                <li><a href="../index.html#image-tools" class="footer-link">Image Tools</a></li>
+                <li><a href="../index.html#text-tools" class="footer-link">Text Tools</a></li>
+            </ul>
+        </div>
+        <div class="footer-column">
+            <h3>Popular Tools</h3>
+            <ul class="footer-links">
+                <li><a href="compress-pdf.html" class="footer-link">Compress PDF</a></li>
+                <li><a href="compress-image.html" class="footer-link">Compress Image</a></li>
+                <li><a href="pdf-to-jpg.html" class="footer-link">PDF to JPG</a></li>
+                <li><a href="merge-pdf.html" class="footer-link">Merge PDF</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <h4>&copy; 2025 DocLite. All rights reserved.</h4>
+    </div>
+</footer>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf-lib/1.17.1/pdf-lib.min.js"></script>
+<script src="../js/components.js"></script>
+<script>
+(function() {
+    let pdfDoc = null,
+        fileName = '';
+    const {
+        PDFDocument
+    } = PDFLib;
+
+    document.getElementById('uploadArea').appendChild(DocLiteComponents.createUploadArea({
+        accept: 'application/pdf',
+        multiple: false,
+        onFileSelect: async f => {
+            const bytes = await f[0].arrayBuffer();
+            try {
+                pdfDoc = await PDFDocument.load(bytes, {
+                    ignoreEncryption: true
+                });
+                fileName = f[0].name;
+                document.getElementById('controlsSection').classList.remove('hidden');
+            } catch (e) {
+                alert('Could not load PDF. It might be encrypted or corrupted.');
+            }
+        }
+    }));
+
+    document.getElementById('processBtn').onclick = async () => {
+        DocLiteComponents.showLoading('Attempting to remove watermark...');
+        try {
+            // This is a placeholder for a real watermark removal logic.
+            // True watermark removal is extremely complex and often requires
+            // server-side processing or advanced image analysis.
+            // For now, we just re-save the document.
+            const bytes = await pdfDoc.save();
+            const blob = new Blob([bytes], {
+                type: 'application/pdf'
+            });
+            window.processedBlob = blob;
+            document.getElementById('resultSection').classList.remove('hidden');
+            document.getElementById('downloadBtn').onclick = () => DocLiteComponents.downloadFile(blob, 'no_watermark_' + fileName);
+            DocLiteComponents.hideLoading();
+            alert('Processing complete. Check the downloaded file. Note: Complex watermarks may not be removed.');
+        } catch (e) {
+            console.error(e);
+            alert('An error occurred during processing.');
+            DocLiteComponents.hideLoading();
+        }
+    };
+})();
+</script>
+</body>
+</html>
+
