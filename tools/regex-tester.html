@@ -1,4 +1,5 @@
-<!DOCTYPE html><html><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>Regex Tester | DocLite</title><link rel="stylesheet" href="../css/global.css">   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css"><style>.match{background:rgba(102,126,234,0.3);padding:2px 4px;border-radius:3px;}</style></head><body>    <nav class="navbar">
+﻿<!DOCTYPE html><html><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>Regex Tester | DocLite</title><link rel="stylesheet" href="../css/global.css">   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css"><style>.match{background:rgba(102,126,234,0.3);padding:2px 4px;border-radius:3px;}</style><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7592510129424613" crossorigin="anonymous"></script>
+</head><body>    <nav class="navbar">
         <div class="navbar-container">
             <a href="../index.html" class="navbar-logo">DocLite</a>
             <ul class="navbar-menu">
@@ -29,4 +30,5 @@
             <h4>&copy; 2025 DocLite. All rights reserved.</h4>
         </div>
     </footer><script>function test(){const pattern=document.getElementById('pattern').value;const flags=document.getElementById('flags').value;const testStr=document.getElementById('testString').value;if(!pattern){alert('Enter a regex pattern');return;}try{const regex=new RegExp(pattern,flags);const matches=testStr.matchAll(regex);const arr=[...matches];document.getElementById('matchCount').textContent=`(${arr.length} matches)`;let highlighted=testStr;arr.reverse().forEach(m=>{highlighted=highlighted.substring(0,m.index)+'<span class="match">'+highlighted.substring(m.index,m.index+m[0].length)+'</span>'+highlighted.substring(m.index+m[0].length);});document.getElementById('highlighted').innerHTML=highlighted;let matchesHtml='<div style="margin-top:1rem;"><strong>Matches:</strong></div>';arr.reverse().forEach((m,i)=>{matchesHtml+=`<div style="padding:0.5rem;margin:0.5rem 0;background:rgba(102,126,234,0.05);border-radius:6px;"><strong>Match ${i+1}:</strong> "${m[0]}" at position ${m.index}</div>`;});document.getElementById('matches').innerHTML=matchesHtml;document.getElementById('results').classList.remove('hidden');}catch(e){alert('Invalid regex: '+e.message);}}</script></body></html>
+
 

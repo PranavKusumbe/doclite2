@@ -1,4 +1,5 @@
-<!DOCTYPE html><html><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>PDF to Text | DocLite</title><link rel="stylesheet" href="../css/global.css">   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css"></head><body>    <nav class="navbar">
+﻿<!DOCTYPE html><html><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>PDF to Text | DocLite</title><link rel="stylesheet" href="../css/global.css">   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css"><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7592510129424613" crossorigin="anonymous"></script>
+</head><body>    <nav class="navbar">
         <div class="navbar-container">
             <a href="../index.html" class="navbar-logo">DocLite</a>
             <ul class="navbar-menu">
@@ -29,4 +30,5 @@
             <h4>&copy; 2025 DocLite. All rights reserved.</h4>
         </div>
     </footer><script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script><script src="../js/components.js"></script><script>pdfjsLib.GlobalWorkerOptions.workerSrc='https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';(function(){let pdfDoc=null;document.getElementById('uploadArea').appendChild(DocLiteComponents.createUploadArea({accept:'application/pdf',multiple:false,onFileSelect:async f=>{const bytes=await f[0].arrayBuffer();pdfDoc=await pdfjsLib.getDocument({data:bytes}).promise;document.getElementById('controlsSection').classList.remove('hidden');}}));document.getElementById('extractBtn').onclick=async()=>{DocLiteComponents.showLoading();let text='';for(let i=1;i<=pdfDoc.numPages;i++){const page=await pdfDoc.getPage(i);const content=await page.getTextContent();const pageText=content.items.map(item=>item.str).join(' ');text+=`\n--- Page ${i} ---\n${pageText}\n`;}document.getElementById('output').value=text;document.getElementById('resultSection').classList.remove('hidden');DocLiteComponents.hideLoading();};})();</script></body></html>
+
 

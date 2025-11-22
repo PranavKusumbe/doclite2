@@ -1,4 +1,5 @@
-<!DOCTYPE html><html><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>Image to Base64 | DocLite</title><link rel="stylesheet" href="../css/global.css">   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css"></head><body>    <nav class="navbar">
+﻿<!DOCTYPE html><html><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>Image to Base64 | DocLite</title><link rel="stylesheet" href="../css/global.css">   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css"><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7592510129424613" crossorigin="anonymous"></script>
+</head><body>    <nav class="navbar">
         <div class="navbar-container">
             <a href="../index.html" class="navbar-logo">DocLite</a>
             <ul class="navbar-menu">
@@ -29,4 +30,5 @@
             <h4>&copy; 2025 DocLite. All rights reserved.</h4>
         </div>
     </footer><script src="../js/components.js"></script><script>(function(){let base64='';document.getElementById('uploadArea').appendChild(DocLiteComponents.createUploadArea({accept:'image/*',multiple:false,onFileSelect:f=>{const reader=new FileReader();reader.onload=e=>{base64=e.target.result;document.getElementById('base64Output').value=base64;document.getElementById('resultSection').classList.remove('hidden');};reader.readAsDataURL(f[0]);}}));document.getElementById('copyBtn').onclick=()=>{navigator.clipboard.writeText(base64).then(()=>alert('Copied to clipboard!'));};document.getElementById('downloadBtn').onclick=()=>{DocLiteComponents.downloadFile(new Blob([base64],{type:'text/plain'}),'base64.txt');};})();</script></body></html>
+
 

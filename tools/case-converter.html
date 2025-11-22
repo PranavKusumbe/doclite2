@@ -1,4 +1,5 @@
-<!DOCTYPE html><html><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>Case Converter | DocLite</title><link rel="stylesheet" href="../css/global.css">   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css"></head><body>    <nav class="navbar">
+﻿<!DOCTYPE html><html><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>Case Converter | DocLite</title><link rel="stylesheet" href="../css/global.css">   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css"><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7592510129424613" crossorigin="anonymous"></script>
+</head><body>    <nav class="navbar">
         <div class="navbar-container">
             <a href="../index.html" class="navbar-logo">DocLite</a>
             <ul class="navbar-menu">
@@ -29,4 +30,5 @@
             <h4>&copy; 2025 DocLite. All rights reserved.</h4>
         </div>
     </footer><script>function convert(type){const text=document.getElementById('input').value;let result='';switch(type){case 'upper':result=text.toUpperCase();break;case 'lower':result=text.toLowerCase();break;case 'title':result=text.replace(/\w\S*/g,txt=>txt.charAt(0).toUpperCase()+txt.substr(1).toLowerCase());break;case 'sentence':result=text.charAt(0).toUpperCase()+text.slice(1).toLowerCase();break;case 'camel':result=text.toLowerCase().replace(/[^a-zA-Z0-9]+(.)/g,(m,chr)=>chr.toUpperCase());break;case 'snake':result=text.toLowerCase().replace(/\s+/g,'_').replace(/[^a-z0-9_]/g,'');break;}document.getElementById('output').value=result;}</script></body></html>
+
 

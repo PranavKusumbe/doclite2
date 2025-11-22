@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -8,6 +8,7 @@
     <link rel="canonical" href="https://doclite.com/tools/resize-image.html">
     <title>Resize Image Online Free - Custom Dimensions | DocLite</title>
     <link rel="stylesheet" href="../css/global.css">   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7592510129424613" crossorigin="anonymous"></script>
 </head>
 <body>
     <nav class="navbar">
@@ -178,7 +179,7 @@
         resizedResults.forEach((r, i) => {
             const item = document.createElement('div');
             item.className = 'result-item';
-            item.innerHTML = `<img src="${r.thumbnail}" class="result-thumbnail"><div class="result-filename">${r.filename}</div><div style="font-size:0.85rem;color:var(--color-text-light);">${r.dimensions} � ${DocLiteComponents.formatFileSize(r.size)}</div><button class="btn btn-primary btn-small">?? Download</button>`;
+            item.innerHTML = `<img src="${r.thumbnail}" class="result-thumbnail"><div class="result-filename">${r.filename}</div><div style="font-size:0.85rem;color:var(--color-text-light);">${r.dimensions} ï¿½ ${DocLiteComponents.formatFileSize(r.size)}</div><button class="btn btn-primary btn-small">?? Download</button>`;
             item.querySelector('button').onclick = () => DocLiteComponents.downloadFile(r.blob, r.filename);
             grid.appendChild(item);
         });
@@ -197,4 +198,5 @@
     </script>
 </body>
 </html>
+
 
