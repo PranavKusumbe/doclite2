@@ -11,7 +11,6 @@
         window.ezstandalone = window.ezstandalone || {};
         ezstandalone.cmd = ezstandalone.cmd || [];
     </script>
-    <link rel="preconnect" href="https://pagead2.googlesyndication.com">
     <link rel="icon" type="image/png" href="ASSETS/favicon.png">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -76,17 +75,7 @@
             color: white;
         }
     </style>
-    <script>
-        // Lazy load AdSense
-        setTimeout(function() {
-            var script = document.createElement('script');
-            script.src = "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7592510129424613";
-            script.crossOrigin = "anonymous";
-            script.async = true;
-            document.head.appendChild(script);
-        }, 3000); // Delay 3 seconds
-    </script>
-<meta property="og:image" content="https://doclite.me/ASSETS/favicon.png">
+    <meta property="og:image" content="https://doclite.me/ASSETS/favicon.png">
     <link rel="apple-touch-icon" href="https://doclite.me/ASSETS/favicon.png">
 </head>
 <body>
@@ -98,9 +87,11 @@
             </a>
         </div>
     </nav>
+<div id="ezoic-pub-ad-placeholder-101"></div>
 
     <div class="test-dashboard">
         <h1>ðŸ§ª Tool Testing Dashboard</h1>
+<div id="ezoic-pub-ad-placeholder-102"></div>
         <p>Click on each tool to test. Check for popups, icons, and functionality.</p>
 
         <div class="test-section">
@@ -163,8 +154,15 @@
         document.getElementById('clientTools').innerHTML = clientTools.map(createTestItem).join('');
         document.getElementById('aiTools').innerHTML = aiTools.map(createTestItem).join('');
     </script>
+
+<script>
+    ezstandalone.cmd.push(function () {
+        ezstandalone.showAds(101, 102);
+    });
+</script>
 </body>
 </html>
+
 
 
 
