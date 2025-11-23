@@ -1,4 +1,5 @@
-﻿<!DOCTYPE html><html><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>Crop Image | DocLite</title>
+﻿<!DOCTYPE html><html><head>
+    <link rel="icon" type="image/png" href="../ASSETS/favicon.png"><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>Crop Image | DocLite</title>
     <link rel="canonical" href="https://doclite.me/tools/crop-image.html"><link rel="stylesheet" href="../css/global.css">   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css"><style>.crop-container{display:flex;gap:2rem;margin:2rem 0;}#preview-canvas{max-width:100%;border:2px solid var(--primary);cursor:crosshair;}.crop-controls{min-width:250px;}.coord-input{width:100%;margin:0.5rem 0;}</style><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7592510129424613" crossorigin="anonymous"></script>
 </head><body>    <nav class="navbar">
         <div class="navbar-container">
@@ -33,6 +34,7 @@
             <h4>&copy; 2025 DocLite. All rights reserved.</h4>
         </div>
     </footer><script src="../js/components.js"></script><script>(function(){let img=null,originalBlob=null,filename='';const canvas=document.getElementById('preview-canvas'),ctx=canvas.getContext('2d');document.getElementById('uploadArea').appendChild(DocLiteComponents.createUploadArea({accept:'image/*',multiple:false,onFileSelect:f=>{const file=f[0];filename=file.name;const reader=new FileReader();reader.onload=e=>{img=new Image();img.onload=()=>{canvas.width=img.width;canvas.height=img.height;ctx.drawImage(img,0,0);document.getElementById('cropContainer').classList.remove('hidden');document.getElementById('cropW').value=img.width;document.getElementById('cropH').value=img.height;};img.src=e.target.result;};reader.readAsDataURL(file);}}));document.getElementById('cropBtn').onclick=()=>{const x=parseInt(document.getElementById('cropX').value)||0,y=parseInt(document.getElementById('cropY').value)||0,w=parseInt(document.getElementById('cropW').value)||100,h=parseInt(document.getElementById('cropH').value)||100;const c=document.createElement('canvas');c.width=w;c.height=h;c.getContext('2d').drawImage(img,x,y,w,h,0,0,w,h);c.toBlob(blob=>{originalBlob=blob;const url=URL.createObjectURL(blob);document.getElementById('resultPreview').innerHTML=`<img src="${url}" style="max-width:100%;border:2px solid var(--primary);">`;document.getElementById('resultsSection').classList.remove('hidden');document.getElementById('downloadBtn').onclick=()=>DocLiteComponents.downloadFile(blob,filename);},'image/jpeg',0.95);};})();</script></body></html>
+
 
 
 
