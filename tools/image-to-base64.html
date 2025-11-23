@@ -1,7 +1,7 @@
 ﻿<!DOCTYPE html><html><head>
     <link rel="preconnect" href="https://pagead2.googlesyndication.com">
     <link rel="icon" type="image/png" href="../ASSETS/favicon.png"><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>Image to Base64 | DocLite</title>
-    <link rel="canonical" href="https://doclite.me/tools/image-to-base64.html"><link rel="stylesheet" href="../css/global.css">   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">    <script>
+    <link rel="canonical" href="https://doclite.me/tools/image-to-base64.html"><link rel="stylesheet" href="../css/global.css">   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css" media="print" onload="this.media='all'"><noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css"></noscript>    <script>
         // Lazy load AdSense
         setTimeout(function() {
             var script = document.createElement('script');
@@ -45,7 +45,7 @@
         <div class="footer-bottom">
             <h4>&copy; 2025 DocLite. All rights reserved.</h4>
         </div>
-    </footer><script src="../js/components.js"></script><script>(function(){let base64='';document.getElementById('uploadArea').appendChild(DocLiteComponents.createUploadArea({accept:'image/*',multiple:false,onFileSelect:f=>{const reader=new FileReader();reader.onload=e=>{base64=e.target.result;document.getElementById('base64Output').value=base64;document.getElementById('resultSection').classList.remove('hidden');};reader.readAsDataURL(f[0]);}}));document.getElementById('copyBtn').onclick=()=>{navigator.clipboard.writeText(base64).then(()=>alert('Copied to clipboard!'));};document.getElementById('downloadBtn').onclick=()=>{DocLiteComponents.downloadFile(new Blob([base64],{type:'text/plain'}),'base64.txt');};})();</script></body></html>
+    </footer><script defer src="../js/components.js"></script><script>(function(){let base64='';document.getElementById('uploadArea').appendChild(DocLiteComponents.createUploadArea({accept:'image/*',multiple:false,onFileSelect:f=>{const reader=new FileReader();reader.onload=e=>{base64=e.target.result;document.getElementById('base64Output').value=base64;document.getElementById('resultSection').classList.remove('hidden');};reader.readAsDataURL(f[0]);}}));document.getElementById('copyBtn').onclick=()=>{navigator.clipboard.writeText(base64).then(()=>alert('Copied to clipboard!'));};document.getElementById('downloadBtn').onclick=()=>{DocLiteComponents.downloadFile(new Blob([base64],{type:'text/plain'}),'base64.txt');};})();</script></body></html>
 
 
 

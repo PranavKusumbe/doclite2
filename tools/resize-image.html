@@ -9,7 +9,7 @@
     <meta name="keywords" content="resize image, image resizer, change image size, scale image online, custom dimensions">
     <link rel="canonical" href="https://doclite.com/tools/resize-image.html">
     <title>Resize Image Online Free - Custom Dimensions | DocLite</title>
-    <link rel="stylesheet" href="../css/global.css">   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
+    <link rel="stylesheet" href="../css/global.css">   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css" media="print" onload="this.media='all'"><noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css"></noscript>
     <script>
         // Lazy load AdSense
         setTimeout(function() {
@@ -128,8 +128,8 @@
         </div>
     </footer>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
-    <script src="../js/components.js"></script>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+    <script defer src="../js/components.js"></script>
     <script>
 (function() {
     let selectedFiles = [], resizedResults = [];
@@ -192,7 +192,7 @@
         resizedResults.forEach((r, i) => {
             const item = document.createElement('div');
             item.className = 'result-item';
-            item.innerHTML = `<img src="${r.thumbnail}" class="result-thumbnail"><div class="result-filename">${r.filename}</div><div style="font-size:0.85rem;color:var(--color-text-light);">${r.dimensions} ï¿½ ${DocLiteComponents.formatFileSize(r.size)}</div><button class="btn btn-primary btn-small">?? Download</button>`;
+            item.innerHTML = `<img src="${r.thumbnail}" class="result-thumbnail" loading="lazy"><div class="result-filename">${r.filename}</div><div style="font-size:0.85rem;color:var(--color-text-light);">${r.dimensions} ï¿½ ${DocLiteComponents.formatFileSize(r.size)}</div><button class="btn btn-primary btn-small">?? Download</button>`;
             item.querySelector('button').onclick = () => DocLiteComponents.downloadFile(r.blob, r.filename);
             grid.appendChild(item);
         });

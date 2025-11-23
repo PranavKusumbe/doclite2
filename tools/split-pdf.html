@@ -1,7 +1,7 @@
 ﻿<!DOCTYPE html><html><head>
     <link rel="preconnect" href="https://pagead2.googlesyndication.com">
     <link rel="icon" type="image/png" href="../ASSETS/favicon.png"><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>Split PDF | DocLite</title>
-    <link rel="canonical" href="https://doclite.me/tools/split-pdf.html"><link rel="stylesheet" href="../css/global.css">   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">    <script>
+    <link rel="canonical" href="https://doclite.me/tools/split-pdf.html"><link rel="stylesheet" href="../css/global.css">   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css" media="print" onload="this.media='all'"><noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css"></noscript>    <script>
         // Lazy load AdSense
         setTimeout(function() {
             var script = document.createElement('script');
@@ -91,7 +91,7 @@
         <div class="footer-bottom">
             <h4>&copy; 2025 DocLite. All rights reserved.</h4>
         </div>
-    </footer><script src="https://cdnjs.cloudflare.com/ajax/libs/pdf-lib/1.17.1/pdf-lib.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script><script src="../js/components.js"></script><script>(function(){let pdfDoc=null,fileName='';const{PDFDocument}=PDFLib;document.getElementById('uploadArea').appendChild(DocLiteComponents.createUploadArea({accept:'application/pdf',multiple:false,onFileSelect:async f=>{const bytes=await f[0].arrayBuffer();pdfDoc=await PDFDocument.load(bytes);fileName=f[0].name;document.getElementById('toPage').max=pdfDoc.getPageCount();document.getElementById('toPage').value=pdfDoc.getPageCount();document.getElementById('controlsSection').classList.remove('hidden');}}));// Radio button change handlers with improved styling
+    </footer><script defer src="https://cdnjs.cloudflare.com/ajax/libs/pdf-lib/1.17.1/pdf-lib.min.js"></script><script defer src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script><script defer src="../js/components.js"></script><script>(function(){let pdfDoc=null,fileName='';const{PDFDocument}=PDFLib;document.getElementById('uploadArea').appendChild(DocLiteComponents.createUploadArea({accept:'application/pdf',multiple:false,onFileSelect:async f=>{const bytes=await f[0].arrayBuffer();pdfDoc=await PDFDocument.load(bytes);fileName=f[0].name;document.getElementById('toPage').max=pdfDoc.getPageCount();document.getElementById('toPage').value=pdfDoc.getPageCount();document.getElementById('controlsSection').classList.remove('hidden');}}));// Radio button change handlers with improved styling
 document.querySelectorAll('input[name="splitType"]').forEach(r=>{
     r.addEventListener('change',e=>{
         document.getElementById('rangeInputs').style.display=e.target.value==='range'?'block':'none';
