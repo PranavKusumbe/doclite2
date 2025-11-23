@@ -45,19 +45,18 @@
             fileItem.dataset.index = index;
             fileItem.style.cursor = 'move';
             
+            // Use standard file-item structure but with drag handle
             fileItem.innerHTML = `
-                <div style="display: flex; align-items: center; gap: var(--space-sm);">
-                    <div style="font-size: 1.5rem;">☰</div>
-                    <div class="file-icon">📄</div>
-                    <div class="file-info" style="flex: 1;">
-                        <div class="file-name">${file.name}</div>
-                        <div class="file-size">${DocLiteComponents.formatFileSize(file.size)}</div>
-                    </div>
-                    <div class="file-actions">
-                        <button class="btn btn-small btn-secondary remove-btn" data-index="${index}">
-                            Remove
-                        </button>
-                    </div>
+                <div style="cursor: grab; padding-right: 0.5rem; color: var(--color-text-muted);">☰</div>
+                <div class="file-icon">📄</div>
+                <div class="file-info">
+                    <div class="file-name">${file.name}</div>
+                    <div class="file-size">${DocLiteComponents.formatFileSize(file.size)}</div>
+                </div>
+                <div class="file-actions">
+                    <button class="btn btn-small btn-secondary remove-btn" data-index="${index}">
+                        ✕
+                    </button>
                 </div>
             `;
 

@@ -24,7 +24,10 @@
 <body>
     <nav class="navbar">
         <div class="navbar-container">
-            <a href="index.html" class="navbar-logo">DocLite</a>
+            <a href="index.html" class="navbar-logo">
+                <img src="ASSETS/favicon.png" alt="DocLite Logo" class="navbar-logo-img">
+                DocLite
+            </a>
             <ul class="navbar-menu">
                 <li><a href="index.html" class="navbar-link">Home</a></li>
                 <li><a href="index.html#pdf-tools" class="navbar-link">PDF Tools</a></li>
@@ -34,71 +37,61 @@
         </div>
     </nav>
 
-    <!-- Ad Slot -->
-    <div class="ad-slot">
-        Advertisement Space (728x90 Leaderboard)
-    </div>
-
-    <main class="container" style="padding-top: 2rem; padding-bottom: 4rem;">
+    <main class="container" style="padding-top: 2rem; padding-bottom: 4rem; max-width: 1000px; margin: 0 auto;">
         <div class="tool-header">
             <div class="tool-header-icon"><i class="ti ti-mail"></i></div>
             <h1>Contact Us</h1>
             <p class="tool-header-description">We'd love to hear from you! Whether you have a question, a suggestion, or just want to say hello.</p>
         </div>
 
-        <div class="tools-category" style="background: rgba(255,255,255,0.8);">
-            <div class="results-grid" style="grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
-                <div class="result-item" style="text-align: left; padding: 2rem;">
+        <div class="tools-category" style="background: var(--color-surface); padding: 3rem; border-radius: var(--radius-lg); border: 1px solid var(--color-border);">
+            <div class="tools-grid" style="grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-top: 0;">
+                <div class="tool-card" style="text-align: left; padding: 2rem; align-items: flex-start;">
                     <div class="tool-card-icon"><i class="ti ti-message-circle"></i></div>
-                    <h3>Get in Touch</h3>
-                    <p>For all inquiries, please contact us via email. We do our best to respond to all messages within 48 hours.</p>
+                    <h3 class="tool-card-title">Get in Touch</h3>
+                    <p class="tool-card-description" style="margin-bottom: 1.5rem;">For all inquiries, please contact us via email. We do our best to respond to all messages within 48 hours.</p>
                     <a href="mailto:pranavkusumbe211@gmail.com" class="btn btn-primary mt-3">
                         <i class="ti ti-mail"></i> pranavkusumbe211@gmail.com
                     </a>
                 </div>
                 
-                <div class="result-item" style="text-align: left; padding: 2rem;">
+                <div class="tool-card" style="text-align: left; padding: 2rem; align-items: flex-start;">
                     <div class="tool-card-icon"><i class="ti ti-bulb"></i></div>
-                    <h3>Feedback & Suggestions</h3>
-                    <p>Found a bug? Have an idea for a new tool? Your feedback helps us improve DocLite for everyone.</p>
+                    <h3 class="tool-card-title">Feedback & Suggestions</h3>
+                    <p class="tool-card-description">Found a bug? Have an idea for a new tool? Your feedback helps us improve DocLite for everyone.</p>
                 </div>
 
-                <div class="result-item" style="text-align: left; padding: 2rem;">
+                <div class="tool-card" style="text-align: left; padding: 2rem; align-items: flex-start;">
                     <div class="tool-card-icon"><i class="ti ti-briefcase"></i></div>
-                    <h3>Business Inquiries</h3>
-                    <p>For partnerships, advertising, or media requests, please contact us with a clear subject line.</p>
+                    <h3 class="tool-card-title">Business Inquiries</h3>
+                    <p class="tool-card-description">For partnerships, advertising, or media requests, please contact us with a clear subject line.</p>
                 </div>
-            </div>
-
-            <div class="ad-slot" style="margin: 2rem auto;">
-                Advertisement Space (Responsive)
             </div>
         </div>
     </main>
 
-    <footer class="footer">
+            <footer class="footer">
         <div class="footer-container">
             <div class="footer-column">
                 <h3>DocLite</h3>
-                <p>The next-generation online toolbox. 50+ free tools for PDF, Image, Text & Developer utilities. 100% client-side processing for complete privacy.</p>
+                <p class="footer-description">Free online document tools. Convert, compress, and optimize files directly in your browser.</p>
                 <div class="footer-social">
-                    <a href="#" class="social-icon"><i class="ti ti-brand-facebook"></i></a>
-                    <a href="#" class="social-icon"><i class="ti ti-brand-x"></i></a>
-                    <a href="#" class="social-icon"><i class="ti ti-brand-linkedin"></i></a>
-                    <a href="#" class="social-icon"><i class="ti ti-brand-github"></i></a>
+                    <a href="https://github.com" target="_blank" class="social-link" aria-label="GitHub"><i class="ti ti-brand-github"></i></a>
+                    <a href="https://instagram.com" target="_blank" class="social-link" aria-label="Instagram"><i class="ti ti-brand-instagram"></i></a>
+                    <a href="https://facebook.com" target="_blank" class="social-link" aria-label="Facebook"><i class="ti ti-brand-facebook"></i></a>
+                    <a href="https://linkedin.com" target="_blank" class="social-link" aria-label="LinkedIn"><i class="ti ti-brand-linkedin"></i></a>
                 </div>
             </div>
-            
             <div class="footer-column">
-                <h3>Popular Tools</h3>
+                <h3>Popular</h3>
                 <ul class="footer-links">
                     <li><a href="tools/compress-pdf.html" class="footer-link">Compress PDF</a></li>
                     <li><a href="tools/pdf-to-jpg.html" class="footer-link">PDF to JPG</a></li>
+                    <li><a href="tools/compress-image.html" class="footer-link">Compress Image</a></li>
                     <li><a href="tools/merge-pdf.html" class="footer-link">Merge PDF</a></li>
-                    <li><a href="tools/compress-image.html" class="footer-link">Image Compressor</a></li>
+                    <li><a href="tools/word-counter.html" class="footer-link">Word Counter</a></li>
                 </ul>
             </div>
-            
             <div class="footer-column">
                 <h3>Company</h3>
                 <ul class="footer-links">
@@ -109,13 +102,17 @@
                 </ul>
             </div>
         </div>
-        
         <div class="footer-bottom">
             <h4>&copy; 2025 DocLite. All rights reserved.</h4>
         </div>
     </footer>
+<script defer src="js/cookie-consent.js"></script>
 </body>
 </html>
+
+
+
+
 
 
 

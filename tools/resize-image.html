@@ -5,10 +5,10 @@
     <link rel="icon" type="image/png" href="../ASSETS/favicon.png">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Free online image resizer. Change image dimensions to custom width and height. Maintain aspect ratio or crop to exact size.">
-    <meta name="keywords" content="resize image, image resizer, change image size, scale image online, custom dimensions">
+    <meta name="description" content="Resize JPG, PNG, and WebP images online. Change width and height pixels or percentage. Free image resizer.">
+    <meta name="keywords" content="resize image, change image size, image resizer, resize photo online">
     <link rel="canonical" href="https://doclite.com/tools/resize-image.html">
-    <title>Resize Image Online Free - Custom Dimensions | DocLite</title>
+    <title>Resize Image - Change Image Dimensions Online | DocLite</title>
     <link rel="stylesheet" href="../css/global.css">   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css" media="print" onload="this.media='all'"><noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css"></noscript>
     <script>
         // Lazy load AdSense
@@ -22,11 +22,26 @@
     </script>
 <meta property="og:image" content="https://doclite.me/ASSETS/favicon.png">
     <link rel="apple-touch-icon" href="https://doclite.me/ASSETS/favicon.png">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "Resize Image - Change Image Dimensions Online | DocLite",
+      "operatingSystem": "Any",
+      "applicationCategory": "UtilityApplication",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "description": "Resize JPG, PNG, and WebP images online. Change width and height pixels or percentage. Free image resizer."
+    }
+    </script>
 </head>
 <body>
     <nav class="navbar">
         <div class="navbar-container">
-            <a href="../index.html" class="navbar-logo">DocLite</a>
+            <a href="../index.html" class="navbar-logo"><img src="../ASSETS/favicon.png" alt="DocLite Logo" class="navbar-logo-img">DocLite</a>
             <ul class="navbar-menu">
                 <li><a href="../index.html" class="navbar-link">Home</a></li>
                 <li><a href="../index.html#image-tools" class="navbar-link active">Image Tools</a></li>
@@ -34,7 +49,7 @@
         </div>
     </nav>
 
-    <div class="ad-slot">Advertisement Space</div>
+    
 
     <div class="tool-page">
         <div class="tool-header">
@@ -63,19 +78,19 @@
                 </div>
             </div>
             <div style="text-align: center; margin-top: 2rem;">
-                <button id="resizeBtn" class="btn btn-primary btn-large">?? Resize Images</button>
+                <button id="resizeBtn" class="btn btn-primary btn-large"><i class="ti ti-click"></i> Resize Images</button>
             </div>
         </div>
 
         <div id="fileListSection" class="hidden"></div>
         <div id="progressSection"></div>
-        <div class="ad-slot">Advertisement Space</div>
+        
 
         <div id="resultsSection" class="hidden">
             <h2 class="text-center">Resized Images</h2>
             <div id="resultsGrid" class="results-grid"></div>
             <div style="text-align: center; margin-top: 2rem;">
-                <button id="downloadAllBtn" class="btn btn-primary btn-large">?? Download All as ZIP</button>
+                <button id="downloadAllBtn" class="btn btn-primary btn-large"><i class="ti ti-download"></i> Download All as ZIP</button>
             </div>
         </div>
 
@@ -98,28 +113,65 @@
         
     </div>
 
-    <footer class="footer">
+        <!-- SEO Content Section -->
+    <section class="how-to-use-section">
+        <h2>How to Use Resize Image</h2>
+        <ol>
+            <li>Upload your file by dragging it onto the drop zone or clicking the upload button.</li>
+            <li>Adjust any available settings to your preference.</li>
+            <li>Click the process button to start the Resize Image operation.</li>
+            <li>Download your processed file instantly.</li>
+        </ol>
+
+        <h2>Why Use DocLite?</h2>
+        <ul>
+            <li><strong>Fast & Secure:</strong> All processing happens directly in your browser. Your files never leave your device.</li>
+            <li><strong>Free Forever:</strong> No hidden fees, no sign-up required, and no usage limits.</li>
+            <li><strong>High Quality:</strong> We use advanced algorithms to ensure the best possible output quality.</li>
+        </ul>
+
+        <h2>Frequently Asked Questions</h2>
+        <div class="faq-item">
+            <h3 class="faq-question">Is this Resize Image tool free?</h3>
+            <p class="faq-answer">Yes, DocLite provides this Resize Image tool completely free of charge.</p>
+        </div>
+        <div class="faq-item">
+            <h3 class="faq-question">Is it safe to use?</h3>
+            <p class="faq-answer">Absolutely. Since DocLite runs entirely in your browser, your files are never uploaded to any server, ensuring 100% privacy.</p>
+        </div>
+    </section>
+    <!-- Related Tools Section -->
+    <section class="related-tools-section"><h2 class="related-tools-title">Related Tools</h2><div class="related-tools-grid"><a href="resize-image.html" class="tool-card"><div class="tool-card-icon"><i class="ti ti-dimensions"></i></div><h4 class="tool-card-title">Resize Image</h4><p class="tool-card-description">Change image dimensions</p></a><a href="compress-image.html" class="tool-card"><div class="tool-card-icon"><i class="ti ti-arrows-minimize"></i></div><h4 class="tool-card-title">Compress Image</h4><p class="tool-card-description">Reduce image file size</p></a><a href="blur-image.html" class="tool-card"><div class="tool-card-icon"><i class="ti ti-blur"></i></div><h4 class="tool-card-title">Blur Image</h4><p class="tool-card-description">Add blur effect to images</p></a><a href="background-remover.html" class="tool-card"><div class="tool-card-icon"><i class="ti ti-background"></i></div><h4 class="tool-card-title">Remove Background</h4><p class="tool-card-description">Remove image background</p></a></div></section>
+
+            <footer class="footer">
         <div class="footer-container">
             <div class="footer-column">
                 <h3>DocLite</h3>
                 <p class="footer-description">Free online document tools. Convert, compress, and optimize files directly in your browser.</p>
+                <div class="footer-social">
+                    <a href="https://github.com" target="_blank" class="social-link" aria-label="GitHub"><i class="ti ti-brand-github"></i></a>
+                    <a href="https://instagram.com" target="_blank" class="social-link" aria-label="Instagram"><i class="ti ti-brand-instagram"></i></a>
+                    <a href="https://facebook.com" target="_blank" class="social-link" aria-label="Facebook"><i class="ti ti-brand-facebook"></i></a>
+                    <a href="https://linkedin.com" target="_blank" class="social-link" aria-label="LinkedIn"><i class="ti ti-brand-linkedin"></i></a>
+                </div>
             </div>
             <div class="footer-column">
-                <h3>Quick Links</h3>
+                <h3>Popular</h3>
                 <ul class="footer-links">
-                    <li><a href="../index.html" class="footer-link">Home</a></li>
-                    <li><a href="../index.html#pdf-tools" class="footer-link">PDF Tools</a></li>
-                    <li><a href="../index.html#image-tools" class="footer-link">Image Tools</a></li>
-                    <li><a href="../index.html#text-tools" class="footer-link">Text Tools</a></li>
+                    <li><a href="compress-pdf.html" class="footer-link">Compress PDF</a></li>
+                    <li><a href="pdf-to-jpg.html" class="footer-link">PDF to JPG</a></li>
+                    <li><a href="compress-image.html" class="footer-link">Compress Image</a></li>
+                    <li><a href="merge-pdf.html" class="footer-link">Merge PDF</a></li>
+                    <li><a href="word-counter.html" class="footer-link">Word Counter</a></li>
                 </ul>
             </div>
             <div class="footer-column">
-                <h3>Popular Tools</h3>
+                <h3>Company</h3>
                 <ul class="footer-links">
-                    <li><a href="compress-pdf.html" class="footer-link">Compress PDF</a></li>
-                    <li><a href="compress-image.html" class="footer-link">Compress Image</a></li>
-                    <li><a href="pdf-to-jpg.html" class="footer-link">PDF to JPG</a></li>
-                    <li><a href="merge-pdf.html" class="footer-link">Merge PDF</a></li>
+                    <li><a href="../about.html" class="footer-link">About Us</a></li>
+                    <li><a href="../contact.html" class="footer-link">Contact</a></li>
+                    <li><a href="../terms.html" class="footer-link">Terms of Service</a></li>
+                    <li><a href="../privacy.html" class="footer-link">Privacy Policy</a></li>
                 </ul>
             </div>
         </div>
@@ -192,7 +244,7 @@
         resizedResults.forEach((r, i) => {
             const item = document.createElement('div');
             item.className = 'result-item';
-            item.innerHTML = `<img src="${r.thumbnail}" class="result-thumbnail" loading="lazy"><div class="result-filename">${r.filename}</div><div style="font-size:0.85rem;color:var(--color-text-light);">${r.dimensions} ï¿½ ${DocLiteComponents.formatFileSize(r.size)}</div><button class="btn btn-primary btn-small">?? Download</button>`;
+            item.innerHTML = `<img src="${r.thumbnail}" class="result-thumbnail" loading="lazy"><div class="result-filename">${r.filename}</div><div style="font-size:0.85rem;color:var(--color-text-light);">${r.dimensions} ï¿½ ${DocLiteComponents.formatFileSize(r.size)}</div><button class="btn btn-primary btn-small"><i class="ti ti-download"></i> Download</button>`;
             item.querySelector('button').onclick = () => DocLiteComponents.downloadFile(r.blob, r.filename);
             grid.appendChild(item);
         });
@@ -209,8 +261,19 @@
     if (document.readyState === 'loading') { document.addEventListener('DOMContentLoaded', init); } else { init(); }
 })();
     </script>
+<script defer src="../js/cookie-consent.js"></script>
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
 
 
 

@@ -5,10 +5,10 @@
     <link rel="icon" type="image/png" href="../ASSETS/favicon.png">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Free online JSON formatter and validator. Beautify, minify, and validate JSON data instantly. Fix JSON syntax errors.">
-    <meta name="keywords" content="json formatter, json validator, beautify json, minify json, json prettify, json parser online">
+    <meta name="description" content="Format, validate, and beautify JSON data online. Debug JSON code easily with this free developer tool.">
+    <meta name="keywords" content="json formatter, json validator, beautify json, json viewer, format json online">
     <link rel="canonical" href="https://doclite.com/tools/json-formatter.html">
-    <title>JSON Formatter & Validator - Beautify JSON Online | DocLite</title>
+    <title>JSON Formatter - Validate & Beautify JSON | DocLite</title>
     <link rel="stylesheet" href="../css/global.css">   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css" media="print" onload="this.media='all'"><noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css"></noscript>
     <script>
         // Lazy load AdSense
@@ -22,11 +22,26 @@
     </script>
 <meta property="og:image" content="https://doclite.me/ASSETS/favicon.png">
     <link rel="apple-touch-icon" href="https://doclite.me/ASSETS/favicon.png">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "JSON Formatter - Validate & Beautify JSON | DocLite",
+      "operatingSystem": "Any",
+      "applicationCategory": "UtilityApplication",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "description": "Format, validate, and beautify JSON data online. Debug JSON code easily with this free developer tool."
+    }
+    </script>
 </head>
 <body>
     <nav class="navbar">
         <div class="navbar-container">
-            <a href="../index.html" class="navbar-logo">DocLite</a>
+            <a href="../index.html" class="navbar-logo"><img src="../ASSETS/favicon.png" alt="DocLite Logo" class="navbar-logo-img">DocLite</a>
             <ul class="navbar-menu">
                 <li><a href="../index.html" class="navbar-link">Home</a></li>
                 <li><a href="../index.html#dev-tools" class="navbar-link active">Developer</a></li>
@@ -34,7 +49,7 @@
         </div>
     </nav>
 
-    <div class="ad-slot">Advertisement Space</div>
+    
 
     <div class="tool-page">
         <div class="tool-header">
@@ -63,25 +78,25 @@
 
         <div style="display: flex; gap: var(--space-sm); margin-bottom: var(--space-md); flex-wrap: wrap; justify-content: center;">
             <button id="formatBtn" class="btn btn-primary">
-                ? Format & Beautify
+                <i class="ti ti-wand"></i> Format & Beautify
             </button>
             <button id="minifyBtn" class="btn btn-secondary">
-                ??? Minify
+                <i class="ti ti-minimize"></i> Minify
             </button>
             <button id="validateBtn" class="btn btn-secondary">
-                ? Validate Only
+                <i class="ti ti-check"></i> Validate Only
             </button>
             <button id="copyBtn" class="btn btn-secondary">
-                ?? Copy Output
+                <i class="ti ti-copy"></i> Copy Output
             </button>
             <button id="clearBtn" class="btn btn-secondary">
-                ?? Clear
+                <i class="ti ti-eraser"></i> Clear
             </button>
         </div>
 
         <div id="statusMessage" style="padding: var(--space-md); border-radius: var(--radius-md); margin-bottom: var(--space-lg); display: none;"></div>
 
-        <div class="ad-slot">Advertisement Space</div>
+        
 
         <div style="background: white; border-radius: var(--radius-lg); padding: var(--space-lg); margin-bottom: var(--space-xl); box-shadow: var(--shadow-sm);">
             <h3 style="margin-bottom: var(--space-md);">Options</h3>
@@ -127,28 +142,65 @@
         
     </div>
 
-    <footer class="footer">
+        <!-- SEO Content Section -->
+    <section class="how-to-use-section">
+        <h2>How to Use Json Formatter</h2>
+        <ol>
+            <li>Upload your file by dragging it onto the drop zone or clicking the upload button.</li>
+            <li>Adjust any available settings to your preference.</li>
+            <li>Click the process button to start the Json Formatter operation.</li>
+            <li>Download your processed file instantly.</li>
+        </ol>
+
+        <h2>Why Use DocLite?</h2>
+        <ul>
+            <li><strong>Fast & Secure:</strong> All processing happens directly in your browser. Your files never leave your device.</li>
+            <li><strong>Free Forever:</strong> No hidden fees, no sign-up required, and no usage limits.</li>
+            <li><strong>High Quality:</strong> We use advanced algorithms to ensure the best possible output quality.</li>
+        </ul>
+
+        <h2>Frequently Asked Questions</h2>
+        <div class="faq-item">
+            <h3 class="faq-question">Is this Json Formatter tool free?</h3>
+            <p class="faq-answer">Yes, DocLite provides this Json Formatter tool completely free of charge.</p>
+        </div>
+        <div class="faq-item">
+            <h3 class="faq-question">Is it safe to use?</h3>
+            <p class="faq-answer">Absolutely. Since DocLite runs entirely in your browser, your files are never uploaded to any server, ensuring 100% privacy.</p>
+        </div>
+    </section>
+    <!-- Related Tools Section -->
+    <section class="related-tools-section"><h2 class="related-tools-title">Related Tools</h2><div class="related-tools-grid"><a href="html-minifier.html" class="tool-card"><div class="tool-card-icon"><i class="ti ti-file-zip"></i></div><h4 class="tool-card-title">HTML Minifier</h4><p class="tool-card-description">Minify HTML code</p></a><a href="url-encoder.html" class="tool-card"><div class="tool-card-icon"><i class="ti ti-link"></i></div><h4 class="tool-card-title">URL Encoder</h4><p class="tool-card-description">Encode/Decode URLs</p></a><a href="json-formatter.html" class="tool-card"><div class="tool-card-icon"><i class="ti ti-braces"></i></div><h4 class="tool-card-title">JSON Formatter</h4><p class="tool-card-description">Format and validate JSON</p></a><a href="qr-generator.html" class="tool-card"><div class="tool-card-icon"><i class="ti ti-qrcode"></i></div><h4 class="tool-card-title">QR Generator</h4><p class="tool-card-description">Create QR codes</p></a></div></section>
+
+            <footer class="footer">
         <div class="footer-container">
             <div class="footer-column">
                 <h3>DocLite</h3>
                 <p class="footer-description">Free online document tools. Convert, compress, and optimize files directly in your browser.</p>
+                <div class="footer-social">
+                    <a href="https://github.com" target="_blank" class="social-link" aria-label="GitHub"><i class="ti ti-brand-github"></i></a>
+                    <a href="https://instagram.com" target="_blank" class="social-link" aria-label="Instagram"><i class="ti ti-brand-instagram"></i></a>
+                    <a href="https://facebook.com" target="_blank" class="social-link" aria-label="Facebook"><i class="ti ti-brand-facebook"></i></a>
+                    <a href="https://linkedin.com" target="_blank" class="social-link" aria-label="LinkedIn"><i class="ti ti-brand-linkedin"></i></a>
+                </div>
             </div>
             <div class="footer-column">
-                <h3>Quick Links</h3>
+                <h3>Popular</h3>
                 <ul class="footer-links">
-                    <li><a href="../index.html" class="footer-link">Home</a></li>
-                    <li><a href="../index.html#pdf-tools" class="footer-link">PDF Tools</a></li>
-                    <li><a href="../index.html#image-tools" class="footer-link">Image Tools</a></li>
-                    <li><a href="../index.html#text-tools" class="footer-link">Text Tools</a></li>
+                    <li><a href="compress-pdf.html" class="footer-link">Compress PDF</a></li>
+                    <li><a href="pdf-to-jpg.html" class="footer-link">PDF to JPG</a></li>
+                    <li><a href="compress-image.html" class="footer-link">Compress Image</a></li>
+                    <li><a href="merge-pdf.html" class="footer-link">Merge PDF</a></li>
+                    <li><a href="word-counter.html" class="footer-link">Word Counter</a></li>
                 </ul>
             </div>
             <div class="footer-column">
-                <h3>Popular Tools</h3>
+                <h3>Company</h3>
                 <ul class="footer-links">
-                    <li><a href="compress-pdf.html" class="footer-link">Compress PDF</a></li>
-                    <li><a href="compress-image.html" class="footer-link">Compress Image</a></li>
-                    <li><a href="pdf-to-jpg.html" class="footer-link">PDF to JPG</a></li>
-                    <li><a href="merge-pdf.html" class="footer-link">Merge PDF</a></li>
+                    <li><a href="../about.html" class="footer-link">About Us</a></li>
+                    <li><a href="../contact.html" class="footer-link">Contact</a></li>
+                    <li><a href="../terms.html" class="footer-link">Terms of Service</a></li>
+                    <li><a href="../privacy.html" class="footer-link">Privacy Policy</a></li>
                 </ul>
             </div>
         </div>
@@ -159,8 +211,19 @@
 
     <script defer src="../js/components.js"></script>
     <script defer src="../js/json-formatter.js"></script>
+<script defer src="../js/cookie-consent.js"></script>
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
 
 
 

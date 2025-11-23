@@ -24,7 +24,10 @@
 <body>
     <nav class="navbar">
         <div class="navbar-container">
-            <a href="index.html" class="navbar-logo">DocLite</a>
+            <a href="index.html" class="navbar-logo">
+                <img src="ASSETS/favicon.png" alt="DocLite Logo" class="navbar-logo-img">
+                DocLite
+            </a>
             <ul class="navbar-menu">
                 <li><a href="index.html" class="navbar-link">Home</a></li>
                 <li><a href="index.html#pdf-tools" class="navbar-link">PDF Tools</a></li>
@@ -34,86 +37,74 @@
         </div>
     </nav>
 
-    <!-- Ad Slot -->
-    <div class="ad-slot">
-        Advertisement Space (728x90 Leaderboard)
-    </div>
-
-    <main class="container" style="padding-top: 2rem; padding-bottom: 4rem;">
+    <main class="container" style="padding-top: 2rem; padding-bottom: 4rem; max-width: 1000px; margin: 0 auto;">
         <div class="tool-header">
             <div class="tool-header-icon"><i class="ti ti-info-circle"></i></div>
             <h1>About DocLite</h1>
             <p class="tool-header-description">Your trusted companion for secure, client-side document processing.</p>
         </div>
 
-        <div class="tools-category" style="background: rgba(255,255,255,0.8);">
-            <h2>Our Story</h2>
-            <p>DocLite was born from a simple idea: powerful tools shouldn't be complicated or require you to give up your data. In a world where online privacy is increasingly scarce, we wanted to create a toolbox where users could perform tasks on their documents and images with complete peace of mind. That's why we committed to a 100% client-side processing model. When you use DocLite, your files are never uploaded to a server. All the magic happens right in your browser.</p>
+        <div class="tools-category" style="background: var(--color-surface); padding: 3rem; border-radius: var(--radius-lg); border: 1px solid var(--color-border);">
+            <h2 style="margin-bottom: 1.5rem; font-size: 1.75rem;">Our Story</h2>
+            <p style="color: var(--color-text-muted); line-height: 1.7; margin-bottom: 2rem;">DocLite was born from a simple idea: powerful tools shouldn't be complicated or require you to give up your data. In a world where online privacy is increasingly scarce, we wanted to create a toolbox where users could perform tasks on their documents and images with complete peace of mind. That's why we committed to a 100% client-side processing model. When you use DocLite, your files are never uploaded to a server. All the magic happens right in your browser.</p>
 
-            <div class="ad-slot" style="margin: 2rem auto;">
-                Advertisement Space (Responsive)
-            </div>
-
-            <h2>Our Philosophy</h2>
-            <div class="results-grid" style="margin-top: 2rem;">
-                <div class="result-item">
+            <h2 style="margin-bottom: 1.5rem; font-size: 1.75rem;">Our Philosophy</h2>
+            <div class="tools-grid" style="margin-top: 2rem;">
+                <div class="tool-card" style="text-align: center; align-items: center;">
                     <div class="tool-card-icon"><i class="ti ti-shield-lock"></i></div>
-                    <h3>Privacy First</h3>
-                    <p>We believe your files are your business. We don't track, store, or analyze your data.</p>
+                    <h3 class="tool-card-title">Privacy First</h3>
+                    <p class="tool-card-description">We believe your files are your business. We don't track, store, or analyze your data.</p>
                 </div>
-                <div class="result-item">
+                <div class="tool-card" style="text-align: center; align-items: center;">
                     <div class="tool-card-icon"><i class="ti ti-wand"></i></div>
-                    <h3>Simplicity</h3>
-                    <p>Our tools are designed to be intuitive and easy to use, regardless of your technical expertise.</p>
+                    <h3 class="tool-card-title">Simplicity</h3>
+                    <p class="tool-card-description">Our tools are designed to be intuitive and easy to use, regardless of your technical expertise.</p>
                 </div>
-                <div class="result-item">
+                <div class="tool-card" style="text-align: center; align-items: center;">
                     <div class="tool-card-icon"><i class="ti ti-bolt"></i></div>
-                    <h3>Performance</h3>
-                    <p>By leveraging your browser's capabilities, we offer a fast and responsive experience without server lag.</p>
+                    <h3 class="tool-card-title">Performance</h3>
+                    <p class="tool-card-description">By leveraging your browser's capabilities, we offer a fast and responsive experience without server lag.</p>
                 </div>
             </div>
 
-            <h2 class="mt-5">What We Offer</h2>
-            <p>DocLite provides a wide range of tools across several categories:</p>
+            <h2 class="mt-5" style="margin-bottom: 1.5rem; font-size: 1.75rem;">What We Offer</h2>
+            <p style="color: var(--color-text-muted); margin-bottom: 1.5rem;">DocLite provides a wide range of tools across several categories:</p>
             <ul style="list-style: none; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem;">
-                <li class="file-item"><i class="ti ti-file-text file-icon"></i> <strong>PDF Tools:</strong> Merge, split, compress, and convert PDFs.</li>
-                <li class="file-item"><i class="ti ti-photo file-icon"></i> <strong>Image Tools:</strong> Compress, resize, crop, and convert images.</li>
-                <li class="file-item"><i class="ti ti-typography file-icon"></i> <strong>Text Tools:</strong> Word counting, case conversion, and more.</li>
-                <li class="file-item"><i class="ti ti-code file-icon"></i> <strong>Developer Tools:</strong> Formatters, minifiers, and generators.</li>
+                <li class="file-item"><i class="ti ti-file-text file-icon"></i> <div><strong>PDF Tools:</strong> Merge, split, compress, and convert PDFs.</div></li>
+                <li class="file-item"><i class="ti ti-photo file-icon"></i> <div><strong>Image Tools:</strong> Compress, resize, crop, and convert images.</div></li>
+                <li class="file-item"><i class="ti ti-typography file-icon"></i> <div><strong>Text Tools:</strong> Word counting, case conversion, and more.</div></li>
+                <li class="file-item"><i class="ti ti-code file-icon"></i> <div><strong>Developer Tools:</strong> Formatters, minifiers, and generators.</div></li>
             </ul>
 
-            <p class="mt-4">We are constantly working to improve our existing tools and add new ones to make DocLite the only online toolbox you'll ever need. Thank you for choosing DocLite.</p>
+            <p class="mt-4" style="color: var(--color-text-muted); line-height: 1.7;">We are constantly working to improve our existing tools and add new ones to make DocLite the only online toolbox you'll ever need. Thank you for choosing DocLite.</p>
         </div>
     </main>
 
     <!-- Ad Slot -->
-    <div class="ad-slot">
-        Advertisement Space (728x90 Leaderboard)
-    </div>
+    
 
-    <footer class="footer">
+            <footer class="footer">
         <div class="footer-container">
             <div class="footer-column">
                 <h3>DocLite</h3>
-                <p>The next-generation online toolbox. 50+ free tools for PDF, Image, Text & Developer utilities. 100% client-side processing for complete privacy.</p>
+                <p class="footer-description">Free online document tools. Convert, compress, and optimize files directly in your browser.</p>
                 <div class="footer-social">
-                    <a href="#" class="social-icon"><i class="ti ti-brand-facebook"></i></a>
-                    <a href="#" class="social-icon"><i class="ti ti-brand-x"></i></a>
-                    <a href="#" class="social-icon"><i class="ti ti-brand-linkedin"></i></a>
-                    <a href="#" class="social-icon"><i class="ti ti-brand-github"></i></a>
+                    <a href="https://github.com" target="_blank" class="social-link" aria-label="GitHub"><i class="ti ti-brand-github"></i></a>
+                    <a href="https://instagram.com" target="_blank" class="social-link" aria-label="Instagram"><i class="ti ti-brand-instagram"></i></a>
+                    <a href="https://facebook.com" target="_blank" class="social-link" aria-label="Facebook"><i class="ti ti-brand-facebook"></i></a>
+                    <a href="https://linkedin.com" target="_blank" class="social-link" aria-label="LinkedIn"><i class="ti ti-brand-linkedin"></i></a>
                 </div>
             </div>
-            
             <div class="footer-column">
-                <h3>Popular Tools</h3>
+                <h3>Popular</h3>
                 <ul class="footer-links">
                     <li><a href="tools/compress-pdf.html" class="footer-link">Compress PDF</a></li>
                     <li><a href="tools/pdf-to-jpg.html" class="footer-link">PDF to JPG</a></li>
+                    <li><a href="tools/compress-image.html" class="footer-link">Compress Image</a></li>
                     <li><a href="tools/merge-pdf.html" class="footer-link">Merge PDF</a></li>
-                    <li><a href="tools/compress-image.html" class="footer-link">Image Compressor</a></li>
+                    <li><a href="tools/word-counter.html" class="footer-link">Word Counter</a></li>
                 </ul>
             </div>
-            
             <div class="footer-column">
                 <h3>Company</h3>
                 <ul class="footer-links">
@@ -124,13 +115,17 @@
                 </ul>
             </div>
         </div>
-        
         <div class="footer-bottom">
             <h4>&copy; 2025 DocLite. All rights reserved.</h4>
         </div>
     </footer>
+<script defer src="js/cookie-consent.js"></script>
 </body>
 </html>
+
+
+
+
 
 
 
