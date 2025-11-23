@@ -118,7 +118,128 @@
         <div class="footer-bottom">
             <h4>&copy; 2025 DocLite. All rights reserved.</h4>
         </div>
-    </footer><script defer src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script><script defer src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script><script defer src="../js/components.js"></script><script>pdfjsLib.GlobalWorkerOptions.workerSrc='https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';(function(){let pdfDoc=null,fileName='';document.getElementById('uploadArea').appendChild(DocLiteComponents.createUploadArea({accept:'application/pdf',multiple:false,onFileSelect:async f=>{const bytes=await f[0].arrayBuffer();pdfDoc=await pdfjsLib.getDocument({data:bytes}).promise;fileName=f[0].name;document.getElementById('controlsSection').classList.remove('hidden');}}));document.getElementById('quality').oninput=e=>document.getElementById('qualityLabel').textContent=e.target.value+'x';document.getElementById('convertBtn').onclick=async()=>{const scale=parseInt(document.getElementById('quality').value);DocLiteComponents.showLoading();const results=[];for(let i=1;i<=pdfDoc.numPages;i++){const page=await pdfDoc.getPage(i);const viewport=page.getViewport({scale});const canvas=document.createElement('canvas');const ctx=canvas.getContext('2d');canvas.width=viewport.width;canvas.height=viewport.height;await page.render({canvasContext:ctx,viewport}).promise;const blob=await new Promise(r=>canvas.toBlob(r,'image/png'));results.push({blob,filename:`${fileName.replace('.pdf','')}_page_${i}.png`,thumbnail:URL.createObjectURL(blob),size:blob.size});}const g=document.getElementById('resultsGrid');g.innerHTML='';results.forEach(x=>{const d=document.createElement('div');d.className='result-item';d.innerHTML=`<img src="${x.thumbnail}" class="result-thumbnail" loading="lazy"><div class="result-filename">${x.filename}</div><button class="btn btn-primary btn-small">Download</button>`;d.querySelector('button').onclick=()=>DocLiteComponents.downloadFile(x.blob,x.filename);g.appendChild(d);});document.getElementById('resultsSection').classList.remove('hidden');document.getElementById('downloadAllBtn').onclick=()=>DocLiteComponents.downloadAsZip(results,'images.zip');DocLiteComponents.hideLoading();};})();</script><script defer src="../js/cookie-consent.js"></script>
+    </footer><script defer src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script><script defer src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script><script defer src="../js/components.js"></script><script>
+    document.addEventListener('DOMContentLoaded', () => {
+        // Ensure pdfjsLib is loaded
+        if (typeof pdfjsLib === 'undefined') {
+            console.error('PDF.js library not loaded');
+            return;
+        }
+
+        pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
+
+        let pdfDoc = null;
+        let fileName = '';
+
+        // Initialize upload area
+        const uploadArea = document.getElementById('uploadArea');
+        if (uploadArea) {
+            uploadArea.appendChild(DocLiteComponents.createUploadArea({
+                accept: 'application/pdf',
+                multiple: false,
+                onFileSelect: async (files) => {
+                    try {
+                        DocLiteComponents.showLoading('Loading PDF...');
+                        const file = files[0];
+                        const arrayBuffer = await file.arrayBuffer();
+                        pdfDoc = await pdfjsLib.getDocument({ data: arrayBuffer }).promise;
+                        fileName = file.name;
+                        
+                        document.getElementById('controlsSection').classList.remove('hidden');
+                    } catch (error) {
+                        console.error('Error loading PDF:', error);
+                        alert('Error loading PDF. Please try again.');
+                    } finally {
+                        DocLiteComponents.hideLoading();
+                    }
+                }
+            }));
+        }
+
+        // Quality slider
+        const qualityInput = document.getElementById('quality');
+        const qualityLabel = document.getElementById('qualityLabel');
+        if (qualityInput && qualityLabel) {
+            qualityInput.oninput = (e) => {
+                qualityLabel.textContent = e.target.value + 'x';
+            };
+        }
+
+        // Convert button
+        const convertBtn = document.getElementById('convertBtn');
+        if (convertBtn) {
+            convertBtn.onclick = async () => {
+                if (!pdfDoc) return;
+
+                const scale = parseInt(document.getElementById('quality').value) || 2;
+                DocLiteComponents.showLoading('Converting to PNG...');
+                const results = [];
+
+                try {
+                    for (let i = 1; i <= pdfDoc.numPages; i++) {
+                        const page = await pdfDoc.getPage(i);
+                        const viewport = page.getViewport({ scale });
+                        
+                        const canvas = document.createElement('canvas');
+                        const ctx = canvas.getContext('2d');
+                        canvas.width = viewport.width;
+                        canvas.height = viewport.height;
+
+                        await page.render({
+                            canvasContext: ctx,
+                            viewport: viewport
+                        }).promise;
+
+                        const blob = await new Promise(resolve => canvas.toBlob(resolve, 'image/png'));
+                        
+                        results.push({
+                            blob: blob,
+                            filename: `${fileName.replace('.pdf', '')}_page_${i}.png`,
+                            thumbnail: URL.createObjectURL(blob),
+                            size: blob.size
+                        });
+                    }
+
+                    // Render results
+                    const resultsGrid = document.getElementById('resultsGrid');
+                    resultsGrid.innerHTML = '';
+                    
+                    results.forEach(result => {
+                        const item = document.createElement('div');
+                        item.className = 'result-item';
+                        item.innerHTML = `
+                            <div style="margin-bottom: 10px;">
+                                <img src="${result.thumbnail}" class="result-thumbnail" style="max-width: 100%; height: auto; border-radius: 4px;" loading="lazy">
+                            </div>
+                            <div class="result-filename" style="margin-bottom: 10px; word-break: break-all;">${result.filename}</div>
+                            <button class="btn btn-primary btn-small" style="width: 100%;">Download</button>
+                        `;
+                        
+                        item.querySelector('button').onclick = () => DocLiteComponents.downloadFile(result.blob, result.filename);
+                        resultsGrid.appendChild(item);
+                    });
+
+                    document.getElementById('resultsSection').classList.remove('hidden');
+                    
+                    // Scroll to results
+                    document.getElementById('resultsSection').scrollIntoView({ behavior: 'smooth' });
+
+                    // Setup download all
+                    const downloadAllBtn = document.getElementById('downloadAllBtn');
+                    if (downloadAllBtn) {
+                        downloadAllBtn.onclick = () => DocLiteComponents.downloadAsZip(results, 'converted_images.zip');
+                    }
+
+                } catch (error) {
+                    console.error('Error converting PDF:', error);
+                    alert('Error converting PDF. Please try again.');
+                } finally {
+                    DocLiteComponents.hideLoading();
+                }
+            };
+        }
+    });
+</script><script defer src="../js/cookie-consent.js"></script>
 
 
 
