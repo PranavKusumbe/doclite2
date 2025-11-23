@@ -1,6 +1,20 @@
 ﻿<!DOCTYPE html><html><head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://pagead2.googlesyndication.com">
     <link rel="icon" type="image/png" href="../ASSETS/favicon.png"><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>Rotate PDF | DocLite</title>
-    <link rel="canonical" href="https://doclite.me/tools/rotate-pdf.html"><link rel="stylesheet" href="../css/global.css">   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css"><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7592510129424613" crossorigin="anonymous"></script>
+    <link rel="canonical" href="https://doclite.me/tools/rotate-pdf.html"><link rel="stylesheet" href="../css/global.css">   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">    <script>
+        // Lazy load AdSense
+        setTimeout(function() {
+            var script = document.createElement('script');
+            script.src = "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7592510129424613";
+            script.crossOrigin = "anonymous";
+            script.async = true;
+            document.head.appendChild(script);
+        }, 3000); // Delay 3 seconds
+    </script>
+<meta property="og:image" content="https://doclite.me/ASSETS/favicon.png">
+    <link rel="apple-touch-icon" href="https://doclite.me/ASSETS/favicon.png">
 </head><body>    <nav class="navbar">
         <div class="navbar-container">
             <a href="../index.html" class="navbar-logo">DocLite</a>
@@ -34,6 +48,7 @@
             <h4>&copy; 2025 DocLite. All rights reserved.</h4>
         </div>
     </footer><script src="https://cdnjs.cloudflare.com/ajax/libs/pdf-lib/1.17.1/pdf-lib.min.js"></script><script src="../js/components.js"></script><script>(function(){let pdfDoc=null,fileName='';const{PDFDocument,degrees}=PDFLib;document.getElementById('uploadArea').appendChild(DocLiteComponents.createUploadArea({accept:'application/pdf',multiple:false,onFileSelect:async f=>{const bytes=await f[0].arrayBuffer();pdfDoc=await PDFDocument.load(bytes);fileName=f[0].name;document.getElementById('controlsSection').classList.remove('hidden');}}));document.getElementById('rotateBtn').onclick=async()=>{const angle=parseInt(document.getElementById('angle').value);DocLiteComponents.showLoading();const pages=pdfDoc.getPages();pages.forEach(page=>page.setRotation(degrees(angle)));const bytes=await pdfDoc.save();const blob=new Blob([bytes],{type:'application/pdf'});window.rotatedBlob=blob;document.getElementById('resultSection').classList.remove('hidden');document.getElementById('downloadBtn').onclick=()=>DocLiteComponents.downloadFile(blob,fileName);DocLiteComponents.hideLoading();};})();</script></body></html>
+
 
 
 

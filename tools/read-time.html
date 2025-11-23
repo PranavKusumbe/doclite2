@@ -1,6 +1,20 @@
 ﻿<!DOCTYPE html><html><head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://pagead2.googlesyndication.com">
     <link rel="icon" type="image/png" href="../ASSETS/favicon.png"><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>Read Time Calculator | DocLite</title>
-    <link rel="canonical" href="https://doclite.me/tools/read-time.html"><link rel="stylesheet" href="../css/global.css">   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css"><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7592510129424613" crossorigin="anonymous"></script>
+    <link rel="canonical" href="https://doclite.me/tools/read-time.html"><link rel="stylesheet" href="../css/global.css">   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">    <script>
+        // Lazy load AdSense
+        setTimeout(function() {
+            var script = document.createElement('script');
+            script.src = "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7592510129424613";
+            script.crossOrigin = "anonymous";
+            script.async = true;
+            document.head.appendChild(script);
+        }, 3000); // Delay 3 seconds
+    </script>
+<meta property="og:image" content="https://doclite.me/ASSETS/favicon.png">
+    <link rel="apple-touch-icon" href="https://doclite.me/ASSETS/favicon.png">
 </head><body>    <nav class="navbar">
         <div class="navbar-container">
             <a href="../index.html" class="navbar-logo">DocLite</a>
@@ -34,6 +48,7 @@
             <h4>&copy; 2025 DocLite. All rights reserved.</h4>
         </div>
     </footer><style>.stat-card{background:rgba(102,126,234,0.05);padding:1.5rem;border-radius:12px;text-align:center;border:2px solid rgba(102,126,234,0.1);}.stat-value{font-size:2.5rem;font-weight:700;color:var(--primary);}.stat-label{margin-top:0.5rem;color:#666;font-weight:500;}</style><script>document.getElementById('input').addEventListener('input',function(){const text=this.value;const words=text.trim().split(/\s+/).filter(w=>w.length>0).length;const chars=text.length;const readWPM=200;const speakWPM=130;const readTime=Math.ceil(words/readWPM);const speakTime=Math.ceil(words/speakWPM);document.getElementById('wordCount').textContent=words;document.getElementById('charCount').textContent=chars;document.getElementById('readTime').textContent=readTime;document.getElementById('speakTime').textContent=speakTime;});</script></body></html>
+
 
 
 
