@@ -1,4 +1,5 @@
 ﻿<!DOCTYPE html><html><head>
+    <meta name="monetag" content="4a2962f9baaf16a605331cb28a99eacd">
     <link rel="preconnect" href="https://pagead2.googlesyndication.com">
     <link rel="icon" type="image/png" href="../ASSETS/favicon.png"><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>Csv To Json - Free Online Tool | DocLite</title>
     <meta name="keywords" content="Csv To Json, online tool, free Csv To Json, doclite tools">
@@ -110,6 +111,7 @@
         </div>
     </footer><script>function convert(){const csv=document.getElementById('input').value;const lines=csv.split('\n').filter(l=>l.trim());if(lines.length<2){alert('Need at least header row and one data row');return;}const headers=lines[0].split(',').map(h=>h.trim());const result=[];for(let i=1;i<lines.length;i++){const values=lines[i].split(',').map(v=>v.trim());const obj={};headers.forEach((h,idx)=>{obj[h]=values[idx]||'';});result.push(obj);}document.getElementById('output').value=JSON.stringify(result,null,2);}</script><script defer src="../js/cookie-consent.js"></script>
 </body></html>
+
 
 
 
