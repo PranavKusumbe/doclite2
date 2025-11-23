@@ -50,19 +50,40 @@ const observer = new IntersectionObserver((entries) => {
     });
 }, observerOptions);
 
-document.querySelectorAll('.tool-card').forEach(card => {
+    document.querySelectorAll('.tool-card').forEach(card => {
     observer.observe(card);
 });
 
-// Lazy load ad slots
-window.addEventListener('load', () => {
-    const adSlots = document.querySelectorAll('.ad-slot');
-    adSlots.forEach(ad => {
-        // Simulate ad loading (replace with actual AdSense code)
-        setTimeout(() => {
-            ad.style.opacity = '1';
-        }, 100);
-    });
+// Ezoic Dynamic Ad Handling
+window.refreshEzoicAds = function(placeholderIds) {
+    if (typeof ezstandalone !== 'undefined') {
+        ezstandalone.cmd.push(function() {
+            if (placeholderIds) {
+                ezstandalone.showAds(placeholderIds);
+            } else {
+                ezstandalone.showAds();
+            }
+        });
+    }
+};
+
+window.destroyEzoicAds = function(placeholderIds) {
+    if (typeof ezstandalone !== 'undefined') {
+        ezstandalone.cmd.push(function() {
+            if (placeholderIds) {
+                ezstandalone.destroyPlaceholders(placeholderIds);
+            } else {
+                ezstandalone.destroyAll();
+            }
+        });
+    }
+};
+
+// Refresh ads on hash change (for in-page navigation)
+window.addEventListener('hashchange', () => {
+    if (typeof ezstandalone !== 'undefined' && ezstandalone.showAds) {
+        ezstandalone.showAds();
+    }
 });
 
 // Mobile menu toggle
