@@ -114,7 +114,13 @@
         (function() {let f=[],r=[];document.getElementById('uploadArea').appendChild(DocLiteComponents.createUploadArea({accept:'image/*',multiple:true,onFileSelect:h=>{f=h.filter(x=>x.type.startsWith('image/'));if(f.length){const s=document.getElementById('fileListSection');s.innerHTML='';s.appendChild(DocLiteComponents.createFileList(f,{onRemove:i=>{f.splice(i,1);f.length?displayList():s.classList.add('hidden');},onRemoveAll:()=>{f=[];s.classList.add('hidden');}}));s.classList.remove('hidden');document.getElementById('convertBtn').classList.remove('hidden');}}}));function displayList(){const s=document.getElementById('fileListSection');s.innerHTML='';s.appendChild(DocLiteComponents.createFileList(f,{onRemove:i=>{f.splice(i,1);f.length?displayList():s.classList.add('hidden');},onRemoveAll:()=>{f=[];s.classList.add('hidden');}}));s.classList.remove('hidden');}document.getElementById('convertBtn').onclick=async()=>{DocLiteComponents.showLoading('Converting...');r=[];for(const file of f){const res=await new Promise((resolve)=>{const reader=new FileReader();reader.onload=(e)=>{const img=new Image();img.onload=()=>{const canvas=document.createElement('canvas');canvas.width=img.width;canvas.height=img.height;canvas.getContext('2d').drawImage(img,0,0);canvas.toBlob((blob)=>resolve({blob,filename:file.name.replace(/\.[^.]+$/,'')+'.jpg',thumbnail:URL.createObjectURL(blob),size:blob.size}),'image/jpeg',0.9);};img.src=e.target.result;};reader.readAsDataURL(file);});r.push(res);}const g=document.getElementById('resultsGrid');g.innerHTML='';r.forEach(x=>{const d=document.createElement('div');d.className='result-item';d.innerHTML=`<img src="${x.thumbnail}" class="result-thumbnail" loading="lazy"><div class="result-filename">${x.filename}</div><button class="btn btn-primary btn-small">Download</button>`;d.querySelector('button').onclick=()=>DocLiteComponents.downloadFile(x.blob,x.filename);g.appendChild(d);});document.getElementById('resultsSection').classList.remove('hidden');document.getElementById('downloadAllBtn').onclick=()=>DocLiteComponents.downloadAsZip(r,'converted.zip');DocLiteComponents.hideLoading();};})();
     });
     </script><script defer src="../js/cookie-consent.js"></script>
+<!-- Multitag -->
+<script src="https://fpyf8.com/88/tag.min.js" data-zone="187568" async data-cfasync="false"></script>
+
+<!-- Onclick tag -->
+<script>(function(s){s.dataset.zone='10226959',s.src='https://al5sm.com/tag.min.js'})([document.documentElement, document.body].filter(Boolean).pop().appendChild(document.createElement('script')))</script>
 </body></html>
+
 
 
 

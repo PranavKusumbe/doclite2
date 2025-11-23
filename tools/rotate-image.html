@@ -114,7 +114,13 @@
         (function() {let f=[],r=[];document.getElementById('uploadArea').appendChild(DocLiteComponents.createUploadArea({accept:'image/*',multiple:true,onFileSelect:h=>{f=h.filter(x=>x.type.startsWith('image/'));if(f.length){displayList();document.getElementById('controls').classList.remove('hidden');}}}));function displayList(){const s=document.getElementById('fileListSection');s.innerHTML='';s.appendChild(DocLiteComponents.createFileList(f,{onRemove:i=>{f.splice(i,1);f.length?displayList():(s.classList.add('hidden'),document.getElementById('controls').classList.add('hidden'));},onRemoveAll:()=>{f=[];s.classList.add('hidden');document.getElementById('controls').classList.add('hidden');}}));s.classList.remove('hidden');}document.getElementById('rotateBtn').onclick=async()=>{const a=parseInt(document.getElementById('angle').value);DocLiteComponents.showLoading();r=[];for(const file of f){const res=await new Promise(resolve=>{const reader=new FileReader();reader.onload=e=>{const img=new Image();img.onload=()=>{const canvas=document.createElement('canvas');const ctx=canvas.getContext('2d');if(a===90||a===270){canvas.width=img.height;canvas.height=img.width;}else{canvas.width=img.width;canvas.height=img.height;}ctx.translate(canvas.width/2,canvas.height/2);ctx.rotate(a*Math.PI/180);ctx.drawImage(img,-img.width/2,-img.height/2);canvas.toBlob(blob=>resolve({blob,filename:file.name,thumbnail:URL.createObjectURL(blob),size:blob.size}),'image/jpeg',0.95);};img.src=e.target.result;};reader.readAsDataURL(file);});r.push(res);}const g=document.getElementById('resultsGrid');g.innerHTML='';r.forEach(x=>{const d=document.createElement('div');d.className='result-item';d.innerHTML=`<img src="${x.thumbnail}" class="result-thumbnail" loading="lazy"><div>${x.filename}</div><button class="btn btn-primary btn-small">Download</button>`;d.querySelector('button').onclick=()=>DocLiteComponents.downloadFile(x.blob,x.filename);g.appendChild(d);});document.getElementById('resultsSection').classList.remove('hidden');document.getElementById('downloadAllBtn').onclick=()=>DocLiteComponents.downloadAsZip(r,'rotated.zip');DocLiteComponents.hideLoading();};})();
     });
     </script><script defer src="../js/cookie-consent.js"></script>
+<!-- Multitag -->
+<script src="https://fpyf8.com/88/tag.min.js" data-zone="187568" async data-cfasync="false"></script>
+
+<!-- Onclick tag -->
+<script>(function(s){s.dataset.zone='10226959',s.src='https://al5sm.com/tag.min.js'})([document.documentElement, document.body].filter(Boolean).pop().appendChild(document.createElement('script')))</script>
 </body></html>
+
 
 
 
