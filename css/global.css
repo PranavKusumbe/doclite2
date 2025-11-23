@@ -1775,3 +1775,43 @@ a:hover {
     transform: translateY(0);
   }
 }
+
+/* ===========================
+   Mobile Performance Optimizations
+   =========================== */
+@media (max-width: 768px) {
+  /* Disable backdrop-filter which is very expensive on mobile */
+  .navbar, 
+  .hero-content, 
+  .tools-category, 
+  .footer-social .social-icon, 
+  .tool-header, 
+  .controls, 
+  .faq-section, 
+  .related-tools, 
+  .ad-slot {
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    background: rgba(255, 255, 255, 0.98) !important; /* Almost opaque fallback */
+  }
+
+  /* Hide animated blobs to save GPU/CPU */
+  .hero-blob {
+    display: none !important;
+  }
+
+  /* Simplify shadows */
+  .tool-card, .hero-content, .navbar {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05) !important;
+  }
+
+  /* Disable heavy hover effects */
+  .tool-card:hover {
+    transform: none !important;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05) !important;
+  }
+  
+  .tool-card::before, .tool-card::after {
+    display: none !important;
+  }
+}
