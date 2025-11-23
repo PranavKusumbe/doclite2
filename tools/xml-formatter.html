@@ -110,11 +110,11 @@
             <h4>&copy; 2025 DocLite. All rights reserved.</h4>
         </div>
     </footer><script>function format(){const xml=document.getElementById('input').value;try{const parser=new DOMParser();const doc=parser.parseFromString(xml,'text/xml');if(doc.getElementsByTagName('parsererror').length){alert('Invalid XML');return;}const formatted=formatXml(new XMLSerializer().serializeToString(doc));document.getElementById('output').value=formatted;}catch(e){alert('Error formatting XML: '+e.message);}}function minify(){const xml=document.getElementById('input').value;document.getElementById('output').value=xml.replace(/>\s+</g,'><').trim();}function formatXml(xml){let formatted='',indent='';xml.split(/>\s*</).forEach(node=>{if(node.match(/^\/\w/))indent=indent.substring(2);formatted+=indent+'<'+node+'>\r\n';if(node.match(/^<?\w[^>]*[^\/]$/)&&!node.startsWith('?'))indent+='  ';});return formatted.substring(1,formatted.length-3);}</script><script defer src="../js/cookie-consent.js"></script>
-<!-- Multitag -->
-<script src="https://fpyf8.com/88/tag.min.js" data-zone="187568" async data-cfasync="false"></script>
+
 
 
 </body></html>
+
 
 
 

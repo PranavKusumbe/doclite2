@@ -110,11 +110,11 @@
             <h4>&copy; 2025 DocLite. All rights reserved.</h4>
         </div>
     </footer><script>const lorem={words:['lorem','ipsum','dolor','sit','amet','consectetur','adipiscing','elit','sed','do','eiusmod','tempor','incididunt','ut','labore','et','dolore','magna','aliqua','enim','ad','minim','veniam','quis','nostrud','exercitation','ullamco','laboris','nisi','aliquip','ex','ea','commodo','consequat','duis','aute','irure','in','reprehenderit','voluptate','velit','esse','cillum','fugiat','nulla','pariatur','excepteur','sint','occaecat','cupidatat','non','proident','sunt','culpa','qui','officia','deserunt','mollit','anim','id','est','laborum'],getWords:n=>{let w=[];for(let i=0;i<n;i++)w.push(lorem.words[Math.floor(Math.random()*lorem.words.length)]);return w.join(' ');},getSentence:()=>{const len=Math.floor(Math.random()*10)+5;return lorem.getWords(len).charAt(0).toUpperCase()+lorem.getWords(len).slice(1)+'.';},getParagraph:()=>{const len=Math.floor(Math.random()*5)+3;let s=[];for(let i=0;i<len;i++)s.push(lorem.getSentence());return s.join(' ');}};function generate(){const type=document.getElementById('type').value;const count=parseInt(document.getElementById('count').value);let result=[];if(type==='words')result=[lorem.getWords(count)];else if(type==='sentences')for(let i=0;i<count;i++)result.push(lorem.getSentence());else for(let i=0;i<count;i++)result.push(lorem.getParagraph());document.getElementById('output').value=result.join('\n\n');}</script><script defer src="../js/cookie-consent.js"></script>
-<!-- Multitag -->
-<script src="https://fpyf8.com/88/tag.min.js" data-zone="187568" async data-cfasync="false"></script>
+
 
 
 </body></html>
+
 
 
 

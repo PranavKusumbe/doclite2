@@ -114,11 +114,11 @@
         (function() {let base64='';document.getElementById('uploadArea').appendChild(DocLiteComponents.createUploadArea({accept:'image/*',multiple:false,onFileSelect:f=>{const reader=new FileReader();reader.onload=e=>{base64=e.target.result;document.getElementById('base64Output').value=base64;document.getElementById('resultSection').classList.remove('hidden');};reader.readAsDataURL(f[0]);}}));document.getElementById('copyBtn').onclick=()=>{navigator.clipboard.writeText(base64).then(()=>alert('Copied to clipboard!'));};document.getElementById('downloadBtn').onclick=()=>{DocLiteComponents.downloadFile(new Blob([base64],{type:'text/plain'}),'base64.txt');};})();
     });
     </script><script defer src="../js/cookie-consent.js"></script>
-<!-- Multitag -->
-<script src="https://fpyf8.com/88/tag.min.js" data-zone="187568" async data-cfasync="false"></script>
+
 
 
 </body></html>
+
 
 
 

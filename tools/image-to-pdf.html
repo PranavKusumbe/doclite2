@@ -114,11 +114,11 @@
         (function() {let f=[];const{PDFDocument}=PDFLib;document.getElementById('uploadArea').appendChild(DocLiteComponents.createUploadArea({accept:'image/*',multiple:true,onFileSelect:h=>{f=h.filter(x=>x.type.startsWith('image/'));if(f.length){displayList();document.getElementById('convertBtn').classList.remove('hidden');}}}));function displayList(){const s=document.getElementById('fileListSection');s.innerHTML='';s.appendChild(DocLiteComponents.createFileList(f,{onRemove:i=>{f.splice(i,1);f.length?displayList():(s.classList.add('hidden'),document.getElementById('convertBtn').classList.add('hidden'));},onRemoveAll:()=>{f=[];s.classList.add('hidden');document.getElementById('convertBtn').classList.add('hidden');}}));s.classList.remove('hidden');}document.getElementById('convertBtn').onclick=async()=>{DocLiteComponents.showLoading();const pdfDoc=await PDFDocument.create();for(const file of f){const reader=new FileReader();const dataUrl=await new Promise(resolve=>{reader.onload=e=>resolve(e.target.result);reader.readAsDataURL(file);});const tempImg=new Image();await new Promise(resolve=>{tempImg.onload=resolve;tempImg.src=dataUrl;});const canvas=document.createElement('canvas');canvas.width=tempImg.width;canvas.height=tempImg.height;canvas.getContext('2d').drawImage(tempImg,0,0);const jpegDataUrl=canvas.toDataURL('image/jpeg',0.95);const jpegBytes=await fetch(jpegDataUrl).then(r=>r.arrayBuffer());const img=await pdfDoc.embedJpg(jpegBytes);const page=pdfDoc.addPage([img.width,img.height]);page.drawImage(img,{x:0,y:0,width:img.width,height:img.height});}const pdfBytes=await pdfDoc.save();const blob=new Blob([pdfBytes],{type:'application/pdf'});window.pdfBlob=blob;document.getElementById('resultSection').classList.remove('hidden');document.getElementById('downloadBtn').onclick=()=>DocLiteComponents.downloadFile(blob,'images.pdf');DocLiteComponents.hideLoading();};})();
     });
     </script><script defer src="../js/cookie-consent.js"></script>
-<!-- Multitag -->
-<script src="https://fpyf8.com/88/tag.min.js" data-zone="187568" async data-cfasync="false"></script>
+
 
 
 </body></html>
+
 
 
 

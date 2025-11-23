@@ -114,11 +114,11 @@
         (function() {let pdfDoc=null,fileName='';const{PDFDocument,degrees}=PDFLib;document.getElementById('uploadArea').appendChild(DocLiteComponents.createUploadArea({accept:'application/pdf',multiple:false,onFileSelect:async f=>{const bytes=await f[0].arrayBuffer();pdfDoc=await PDFDocument.load(bytes);fileName=f[0].name;document.getElementById('controlsSection').classList.remove('hidden');}}));document.getElementById('rotateBtn').onclick=async()=>{const angle=parseInt(document.getElementById('angle').value);DocLiteComponents.showLoading();const pages=pdfDoc.getPages();pages.forEach(page=>page.setRotation(degrees(angle)));const bytes=await pdfDoc.save();const blob=new Blob([bytes],{type:'application/pdf'});window.rotatedBlob=blob;document.getElementById('resultSection').classList.remove('hidden');document.getElementById('downloadBtn').onclick=()=>DocLiteComponents.downloadFile(blob,fileName);DocLiteComponents.hideLoading();};})();
     });
     </script><script defer src="../js/cookie-consent.js"></script>
-<!-- Multitag -->
-<script src="https://fpyf8.com/88/tag.min.js" data-zone="187568" async data-cfasync="false"></script>
+
 
 
 </body></html>
+
 
 
 
