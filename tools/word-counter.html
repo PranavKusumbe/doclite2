@@ -1,27 +1,28 @@
 ﻿<!DOCTYPE html>
+
 <html lang="en">
 <head>
-    <!-- Ezoic Privacy Scripts -->
-    <script src="https://cmp.gatekeeperconsent.com/min.js" data-cfasync="false"></script>
-    <script src="https://the.gatekeeperconsent.com/cmp.min.js" data-cfasync="false"></script>
-    
-    <!-- Ezoic Header Script -->
-    <script async src="//www.ezojs.com/ezoic/sa.min.js"></script>
-    <script>
+<!-- Ezoic Privacy Scripts -->
+<script data-cfasync="false" src="https://cmp.gatekeeperconsent.com/min.js"></script>
+<script data-cfasync="false" src="https://the.gatekeeperconsent.com/cmp.min.js"></script>
+<!-- Ezoic Header Script -->
+<script async="" src="//www.ezojs.com/ezoic/sa.min.js"></script>
+<script>
         window.ezstandalone = window.ezstandalone || {};
         ezstandalone.cmd = ezstandalone.cmd || [];
     </script>
-    <link rel="icon" type="image/png" href="../ASSETS/favicon.png">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Free online word counter tool. Count words, characters, sentences, and paragraphs in real-time. Perfect for writers and students.">
-    <meta name="keywords" content="word counter, character count, word count tool, count words online, letter counter">
-    <link rel="canonical" href="https://doclite.com/tools/word-counter.html">
-    <title>Word Counter - Count Words & Characters Online | DocLite</title>
-    <link rel="stylesheet" href="../css/global.css">   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css" media="print" onload="this.media='all'"><noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css"></noscript>
-    <meta property="og:image" content="https://doclite.me/ASSETS/favicon.png">
-    <link rel="apple-touch-icon" href="https://doclite.me/ASSETS/favicon.png">
-    <script type="application/ld+json">
+<link href="../ASSETS/favicon.png" rel="icon" type="image/png"/>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="Free online word counter tool. Count words, characters, sentences, and paragraphs in real-time. Perfect for writers and students." name="description"/>
+<meta content="word counter, character count, word count tool, count words online, letter counter" name="keywords"/>
+<link href="https://doclite.com/tools/word-counter.html" rel="canonical"/>
+<title>Word Counter - Count Words &amp; Characters Online | DocLite</title>
+<link href="../css/global.css" rel="stylesheet"/> <link href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css" media="print" onload="this.media='all'" rel="stylesheet"/><noscript><link href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css" rel="stylesheet"/></noscript>
+<meta content="https://doclite.me/ASSETS/banner.png" property="og:image"/>
+<meta content="https://doclite.me/ASSETS/banner.png" name="twitter:image"/>
+<link href="https://doclite.me/ASSETS/favicon.png" rel="apple-touch-icon"/>
+<script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "SoftwareApplication",
@@ -38,161 +39,138 @@
     </script>
 </head>
 <body>
-    <nav class="navbar">
-        <div class="navbar-container">
-            <a href="../index.html" class="navbar-logo"><img src="../ASSETS/favicon.png" alt="DocLite Logo" class="navbar-logo-img">DocLite</a>
-            <ul class="navbar-menu">
-                <li><a href="../index.html" class="navbar-link">Home</a></li>
-                <li><a href="../index.html#text-tools" class="navbar-link active">Text Tools</a></li>
-            </ul>
-        </div>
-    </nav>
+<nav class="navbar">
+<div class="navbar-container">
+<a class="navbar-logo" href="../index.html"><img alt="DocLite Logo" class="navbar-logo-img" src="../ASSETS/favicon.png"/>DocLite</a>
+<ul class="navbar-menu">
+<li><a class="navbar-link" href="../index.html">Home</a></li>
+<li><a class="navbar-link active" href="../index.html#text-tools">Text Tools</a></li>
+</ul>
+</div>
+</nav>
 <div id="ezoic-pub-ad-placeholder-101"></div>
+<div class="tool-page">
+<div class="tool-header">
+<div class="tool-header-icon"><i class="ti ti-calculator"></i></div>
+<h1 class="tool-header-title">Word Counter</h1>
 
-    
-
-    <div class="tool-page">
-        <div class="tool-header">
-            <div class="tool-header-icon"><i class="ti ti-calculator"></i></div>
-            <h1 class="tool-header-title">Word Counter</h1>
-<div id="ezoic-pub-ad-placeholder-102"></div>
-            <p class="tool-header-description">
+<p class="tool-header-description">
                 Count words, characters, sentences, and paragraphs in real-time. Perfect for essays, articles, and assignments.
             </p>
-        </div>
-
-        <div style="background: white; border-radius: var(--radius-lg); padding: var(--space-lg); box-shadow: var(--shadow-sm); margin-bottom: var(--space-xl);">
-            <div class="stats-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: var(--space-md); margin-bottom: var(--space-lg);">
-                <div class="stat-card" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); padding: var(--space-md); border-radius: var(--radius-md); color: white; text-align: center;">
-                    <div style="font-size: 2rem; font-weight: 700;" id="wordCount">0</div>
-                    <div style="font-size: 0.9rem; opacity: 0.9;">Words</div>
-                </div>
-                <div class="stat-card" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); padding: var(--space-md); border-radius: var(--radius-md); color: white; text-align: center;">
-                    <div style="font-size: 2rem; font-weight: 700;" id="charCount">0</div>
-                    <div style="font-size: 0.9rem; opacity: 0.9;">Characters</div>
-                </div>
-                <div class="stat-card" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%); padding: var(--space-md); border-radius: var(--radius-md); color: white; text-align: center;">
-                    <div style="font-size: 2rem; font-weight: 700;" id="charNoSpaceCount">0</div>
-                    <div style="font-size: 0.9rem; opacity: 0.9;">Chars (no spaces)</div>
-                </div>
-                <div class="stat-card" style="background: linear-gradient(135deg, #fa709a 0%, #fee140 100%); padding: var(--space-md); border-radius: var(--radius-md); color: white; text-align: center;">
-                    <div style="font-size: 2rem; font-weight: 700;" id="sentenceCount">0</div>
-                    <div style="font-size: 0.9rem; opacity: 0.9;">Sentences</div>
-                </div>
-                <div class="stat-card" style="background: linear-gradient(135deg, #30cfd0 0%, #330867 100%); padding: var(--space-md); border-radius: var(--radius-md); color: white; text-align: center;">
-                    <div style="font-size: 2rem; font-weight: 700;" id="paragraphCount">0</div>
-                    <div style="font-size: 0.9rem; opacity: 0.9;">Paragraphs</div>
-                </div>
-                <div class="stat-card" style="background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%); padding: var(--space-md); border-radius: var(--radius-md); color: #2d3748; text-align: center;">
-                    <div style="font-size: 2rem; font-weight: 700;" id="readTime">0</div>
-                    <div style="font-size: 0.9rem; opacity: 0.8;">Min Read</div>
-                </div>
-            </div>
-
-            <textarea id="textInput" placeholder="Start typing or paste your text here..." 
-                style="width: 100%; min-height: 400px; padding: var(--space-md); border: 2px solid var(--color-bg); border-radius: var(--radius-md); font-family: var(--font-sans); font-size: 1rem; line-height: 1.6; resize: vertical;"
-            ></textarea>
-
-            <div style="display: flex; gap: var(--space-sm); margin-top: var(--space-md); flex-wrap: wrap;">
-                <button id="clearBtn" class="btn btn-secondary">Clear Text</button>
-                <button id="copyBtn" class="btn btn-secondary"><i class="ti ti-copy"></i> Copy Text</button>
-                <button id="uppercaseBtn" class="btn btn-secondary">UPPERCASE</button>
-                <button id="lowercaseBtn" class="btn btn-secondary">lowercase</button>
-                <button id="titlecaseBtn" class="btn btn-secondary">Title Case</button>
-            </div>
-        </div>
-
-        
-
-        <div class="faq-section">
-            <h2 class="faq-title">Frequently Asked Questions</h2>
-            <div class="faq-item">
-                <h3 class="faq-question">How accurate is the word counter?</h3>
-                <p class="faq-answer">Our word counter uses industry-standard algorithms to count words, matching the methods used by major word processors like Microsoft Word and Google Docs.</p>
-            </div>
-            <div class="faq-item">
-                <h3 class="faq-question">Does it count hyphenated words correctly?</h3>
-                <p class="faq-answer">Yes! Hyphenated words are counted as single words, which is the standard practice in most writing contexts.</p>
-            </div>
-            <div class="faq-item">
-                <h3 class="faq-question">How is reading time calculated?</h3>
-                <p class="faq-answer">Reading time is calculated based on an average reading speed of 200-250 words per minute, which is typical for adult readers.</p>
-            </div>
-        </div>
-
-        
-    </div>
-
-        <!-- SEO Content Section -->
-    
+</div><div id="ezoic-pub-ad-placeholder-102"></div>
+<div style="background: white; border-radius: var(--radius-lg); padding: var(--space-lg); box-shadow: var(--shadow-sm); margin-bottom: var(--space-xl);">
+<div class="stats-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: var(--space-md); margin-bottom: var(--space-lg);">
+<div class="stat-card" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); padding: var(--space-md); border-radius: var(--radius-md); color: white; text-align: center;">
+<div id="wordCount" style="font-size: 2rem; font-weight: 700;">0</div>
+<div style="font-size: 0.9rem; opacity: 0.9;">Words</div>
+</div>
+<div class="stat-card" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); padding: var(--space-md); border-radius: var(--radius-md); color: white; text-align: center;">
+<div id="charCount" style="font-size: 2rem; font-weight: 700;">0</div>
+<div style="font-size: 0.9rem; opacity: 0.9;">Characters</div>
+</div>
+<div class="stat-card" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%); padding: var(--space-md); border-radius: var(--radius-md); color: white; text-align: center;">
+<div id="charNoSpaceCount" style="font-size: 2rem; font-weight: 700;">0</div>
+<div style="font-size: 0.9rem; opacity: 0.9;">Chars (no spaces)</div>
+</div>
+<div class="stat-card" style="background: linear-gradient(135deg, #fa709a 0%, #fee140 100%); padding: var(--space-md); border-radius: var(--radius-md); color: white; text-align: center;">
+<div id="sentenceCount" style="font-size: 2rem; font-weight: 700;">0</div>
+<div style="font-size: 0.9rem; opacity: 0.9;">Sentences</div>
+</div>
+<div class="stat-card" style="background: linear-gradient(135deg, #30cfd0 0%, #330867 100%); padding: var(--space-md); border-radius: var(--radius-md); color: white; text-align: center;">
+<div id="paragraphCount" style="font-size: 2rem; font-weight: 700;">0</div>
+<div style="font-size: 0.9rem; opacity: 0.9;">Paragraphs</div>
+</div>
+<div class="stat-card" style="background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%); padding: var(--space-md); border-radius: var(--radius-md); color: #2d3748; text-align: center;">
+<div id="readTime" style="font-size: 2rem; font-weight: 700;">0</div>
+<div style="font-size: 0.9rem; opacity: 0.8;">Min Read</div>
+</div>
+</div>
+<textarea id="textInput" placeholder="Start typing or paste your text here..." style="width: 100%; min-height: 400px; padding: var(--space-md); border: 2px solid var(--color-bg); border-radius: var(--radius-md); font-family: var(--font-sans); font-size: 1rem; line-height: 1.6; resize: vertical;"></textarea>
+<div style="display: flex; gap: var(--space-sm); margin-top: var(--space-md); flex-wrap: wrap;">
+<button class="btn btn-secondary" id="clearBtn">Clear Text</button>
+<button class="btn btn-secondary" id="copyBtn"><i class="ti ti-copy"></i> Copy Text</button>
+<button class="btn btn-secondary" id="uppercaseBtn">UPPERCASE</button>
+<button class="btn btn-secondary" id="lowercaseBtn">lowercase</button>
+<button class="btn btn-secondary" id="titlecaseBtn">Title Case</button>
+</div>
+</div>
+<div class="faq-section">
+<h2 class="faq-title">Frequently Asked Questions</h2>
+<div class="faq-item">
+<h3 class="faq-question">How accurate is the word counter?</h3>
+<p class="faq-answer">Our word counter uses industry-standard algorithms to count words, matching the methods used by major word processors like Microsoft Word and Google Docs.</p>
+</div>
+<div class="faq-item">
+<h3 class="faq-question">Does it count hyphenated words correctly?</h3>
+<p class="faq-answer">Yes! Hyphenated words are counted as single words, which is the standard practice in most writing contexts.</p>
+</div>
+<div class="faq-item">
+<h3 class="faq-question">How is reading time calculated?</h3>
+<p class="faq-answer">Reading time is calculated based on an average reading speed of 200-250 words per minute, which is typical for adult readers.</p>
+</div>
+</div>
+</div>
+<!-- SEO Content Section -->
 <div id="ezoic-pub-ad-placeholder-109"></div>
-
-        <h2>Why Use DocLite?</h2>
-        <ul>
-            <li><strong>Fast & Secure:</strong> All processing happens directly in your browser. Your files never leave your device.</li>
-            <li><strong>Free Forever:</strong> No hidden fees, no sign-up required, and no usage limits.</li>
-            <li><strong>High Quality:</strong> We use advanced algorithms to ensure the best possible output quality.</li>
-        </ul>
-
-        <div id="ezoic-pub-ad-placeholder-111"></div>
+<h2>Why Use DocLite?</h2>
+<ul>
+<li><strong>Fast &amp; Secure:</strong> All processing happens directly in your browser. Your files never leave your device.</li>
+<li><strong>Free Forever:</strong> No hidden fees, no sign-up required, and no usage limits.</li>
+<li><strong>High Quality:</strong> We use advanced algorithms to ensure the best possible output quality.</li>
+</ul>
+<div id="ezoic-pub-ad-placeholder-111"></div>
 <h2>Frequently Asked Questions</h2>
-        <div class="faq-item">
-            <h3 class="faq-question">Is this Word Counter tool free?</h3>
-            <p class="faq-answer">Yes, DocLite provides this Word Counter tool completely free of charge.</p>
-        </div>
-        <div class="faq-item">
-            <h3 class="faq-question">Is it safe to use?</h3>
-            <p class="faq-answer">Absolutely. Since DocLite runs entirely in your browser, your files are never uploaded to any server, ensuring 100% privacy.</p>
-        </div>
-    </section>
-    <!-- Related Tools Section -->
-    <section class="related-tools-section"><h2 class="related-tools-title">Related Tools</h2><div class="related-tools-grid"><a href="word-counter.html" class="tool-card"><div class="tool-card-icon"><i class="ti ti-calculator"></i></div><h4 class="tool-card-title">Word Counter</h4><p class="tool-card-description">Count words and characters</p></a><a href="remove-duplicates.html" class="tool-card"><div class="tool-card-icon"><i class="ti ti-copy-off"></i></div><h4 class="tool-card-title">Remove Duplicates</h4><p class="tool-card-description">Remove duplicate lines</p></a><a href="lorem-ipsum.html" class="tool-card"><div class="tool-card-icon"><i class="ti ti-file-text"></i></div><h4 class="tool-card-title">Lorem Ipsum</h4><p class="tool-card-description">Generate placeholder text</p></a><a href="case-converter.html" class="tool-card"><div class="tool-card-icon"><i class="ti ti-letter-case"></i></div><h4 class="tool-card-title">Case Converter</h4><p class="tool-card-description">Change text case</p></a></div></section>
+<div class="faq-item">
+<h3 class="faq-question">Is this Word Counter tool free?</h3>
+<p class="faq-answer">Yes, DocLite provides this Word Counter tool completely free of charge.</p>
+</div>
+<div class="faq-item">
+<h3 class="faq-question">Is it safe to use?</h3>
+<p class="faq-answer">Absolutely. Since DocLite runs entirely in your browser, your files are never uploaded to any server, ensuring 100% privacy.</p>
+</div>
 
-            <div id="ezoic-pub-ad-placeholder-103"></div>
+<!-- Related Tools Section -->
+<section class="related-tools-section"><h2 class="related-tools-title">Related Tools</h2><div class="related-tools-grid"><a class="tool-card" href="word-counter.html"><div class="tool-card-icon"><i class="ti ti-calculator"></i></div><h4 class="tool-card-title">Word Counter</h4><p class="tool-card-description">Count words and characters</p></a><a class="tool-card" href="remove-duplicates.html"><div class="tool-card-icon"><i class="ti ti-copy-off"></i></div><h4 class="tool-card-title">Remove Duplicates</h4><p class="tool-card-description">Remove duplicate lines</p></a><a class="tool-card" href="lorem-ipsum.html"><div class="tool-card-icon"><i class="ti ti-file-text"></i></div><h4 class="tool-card-title">Lorem Ipsum</h4><p class="tool-card-description">Generate placeholder text</p></a><a class="tool-card" href="case-converter.html"><div class="tool-card-icon"><i class="ti ti-letter-case"></i></div><h4 class="tool-card-title">Case Converter</h4><p class="tool-card-description">Change text case</p></a></div></section>
+<div id="ezoic-pub-ad-placeholder-103"></div>
 <footer class="footer">
-        <div class="footer-container">
-            <div class="footer-column">
-                <h3>DocLite</h3>
-                <p class="footer-description">Free online document tools. Convert, compress, and optimize files directly in your browser.</p>
-                <div class="footer-social">
-                    <a href="https://github.com" target="_blank" class="social-link" aria-label="GitHub"><i class="ti ti-brand-github"></i></a>
-                    <a href="https://instagram.com" target="_blank" class="social-link" aria-label="Instagram"><i class="ti ti-brand-instagram"></i></a>
-                    <a href="https://facebook.com" target="_blank" class="social-link" aria-label="Facebook"><i class="ti ti-brand-facebook"></i></a>
-                    <a href="https://linkedin.com" target="_blank" class="social-link" aria-label="LinkedIn"><i class="ti ti-brand-linkedin"></i></a>
-                </div>
-            </div>
-            <div class="footer-column">
-                <h3>Popular</h3>
-                <ul class="footer-links">
-                    <li><a href="compress-pdf.html" class="footer-link">Compress PDF</a></li>
-                    <li><a href="pdf-to-jpg.html" class="footer-link">PDF to JPG</a></li>
-                    <li><a href="compress-image.html" class="footer-link">Compress Image</a></li>
-                    <li><a href="merge-pdf.html" class="footer-link">Merge PDF</a></li>
-                    <li><a href="word-counter.html" class="footer-link">Word Counter</a></li>
-                </ul>
-            </div>
-            <div class="footer-column">
-                <h3>Company</h3>
-                <ul class="footer-links">
-                    <li><a href="../about.html" class="footer-link">About Us</a></li>
-                    <li><a href="../contact.html" class="footer-link">Contact</a></li>
-                    <li><a href="../terms.html" class="footer-link">Terms of Service</a></li>
-                    <li><a href="../privacy.html" class="footer-link">Privacy Policy</a></li>
-                </ul>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <h4>&copy; 2025 DocLite. All rights reserved.</h4>
-        </div>
-    </footer>
-
-    <script defer src="../js/components.js"></script>
-    <script defer src="../js/word-counter.js"></script>
-<script defer src="../js/cookie-consent.js"></script>
-
-
-
-
+<div class="footer-container">
+<div class="footer-column">
+<h3>DocLite</h3>
+<p class="footer-description">Free online document tools. Convert, compress, and optimize files directly in your browser.</p>
+<div class="footer-social">
+<a aria-label="GitHub" class="social-link" href="https://github.com" target="_blank"><i class="ti ti-brand-github"></i></a>
+<a aria-label="Instagram" class="social-link" href="https://instagram.com" target="_blank"><i class="ti ti-brand-instagram"></i></a>
+<a aria-label="Facebook" class="social-link" href="https://facebook.com" target="_blank"><i class="ti ti-brand-facebook"></i></a>
+<a aria-label="LinkedIn" class="social-link" href="https://linkedin.com" target="_blank"><i class="ti ti-brand-linkedin"></i></a>
+</div>
+</div>
+<div class="footer-column">
+<h3>Popular</h3>
+<ul class="footer-links">
+<li><a class="footer-link" href="compress-pdf.html">Compress PDF</a></li>
+<li><a class="footer-link" href="pdf-to-jpg.html">PDF to JPG</a></li>
+<li><a class="footer-link" href="compress-image.html">Compress Image</a></li>
+<li><a class="footer-link" href="merge-pdf.html">Merge PDF</a></li>
+<li><a class="footer-link" href="word-counter.html">Word Counter</a></li>
+</ul>
+</div>
+<div class="footer-column">
+<h3>Company</h3>
+<ul class="footer-links">
+<li><a class="footer-link" href="../about.html">About Us</a></li>
+<li><a class="footer-link" href="../contact.html">Contact</a></li>
+<li><a class="footer-link" href="../terms.html">Terms of Service</a></li>
+<li><a class="footer-link" href="../privacy.html">Privacy Policy</a></li>
+</ul>
+</div>
+</div>
+<div class="footer-bottom">
+<h4>© 2025 DocLite. All rights reserved.</h4>
+</div>
+</footer>
+<script defer="" src="../js/components.js"></script>
+<script defer="" src="../js/word-counter.js"></script>
+<script defer="" src="../js/cookie-consent.js"></script>
 <script>
     ezstandalone.cmd.push(function () {
         ezstandalone.showAds(101, 102, 103, 109, 111);
@@ -200,24 +178,3 @@
 </script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

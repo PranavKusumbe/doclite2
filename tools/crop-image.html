@@ -1,20 +1,21 @@
-﻿<!DOCTYPE html><html><head>
-    <!-- Ezoic Privacy Scripts -->
-    <script src="https://cmp.gatekeeperconsent.com/min.js" data-cfasync="false"></script>
-    <script src="https://the.gatekeeperconsent.com/cmp.min.js" data-cfasync="false"></script>
-    
-    <!-- Ezoic Header Script -->
-    <script async src="//www.ezojs.com/ezoic/sa.min.js"></script>
-    <script>
+﻿<!DOCTYPE html>
+<html><head>
+<!-- Ezoic Privacy Scripts -->
+<script data-cfasync="false" src="https://cmp.gatekeeperconsent.com/min.js"></script>
+<script data-cfasync="false" src="https://the.gatekeeperconsent.com/cmp.min.js"></script>
+<!-- Ezoic Header Script -->
+<script async="" src="//www.ezojs.com/ezoic/sa.min.js"></script>
+<script>
         window.ezstandalone = window.ezstandalone || {};
         ezstandalone.cmd = ezstandalone.cmd || [];
     </script>
-    <link rel="icon" type="image/png" href="../ASSETS/favicon.png"><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>Crop Image - Crop Photos Online Free | DocLite</title>
-    <meta name="keywords" content="crop image, crop photo, image cropper, cut image online">
-    <meta name="description" content="Crop images online easily. Select area and crop photos to exact dimensions. Free image cropper.">
-    <link rel="canonical" href="https://doclite.me/tools/crop-image.html"><link rel="stylesheet" href="../css/global.css">   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css" media="print" onload="this.media='all'"><noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css"></noscript><style>.crop-container{display:flex;gap:2rem;margin:2rem 0;}#preview-canvas{max-width:100%;border:2px solid var(--primary);cursor:crosshair;}.crop-controls{min-width:250px;}.coord-input{width:100%;margin:0.5rem 0;}</style>    <meta property="og:image" content="https://doclite.me/ASSETS/favicon.png">
-    <link rel="apple-touch-icon" href="https://doclite.me/ASSETS/favicon.png">
-    <script type="application/ld+json">
+<link href="../ASSETS/favicon.png" rel="icon" type="image/png"/><meta charset="utf-8"/><meta content="width=device-width,initial-scale=1.0" name="viewport"/><title>Crop Image - Crop Photos Online Free | DocLite</title>
+<meta content="crop image, crop photo, image cropper, cut image online" name="keywords"/>
+<meta content="Crop images online easily. Select area and crop photos to exact dimensions. Free image cropper." name="description"/>
+<link href="https://doclite.me/tools/crop-image.html" rel="canonical"/><link href="../css/global.css" rel="stylesheet"/> <link href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css" media="print" onload="this.media='all'" rel="stylesheet"/><noscript><link href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css" rel="stylesheet"/></noscript><style>.crop-container{display:flex;gap:2rem;margin:2rem 0;}#preview-canvas{max-width:100%;border:2px solid var(--primary);cursor:crosshair;}.crop-controls{min-width:250px;}.coord-input{width:100%;margin:0.5rem 0;}</style> <meta content="https://doclite.me/ASSETS/banner.png" property="og:image"/>
+<meta content="https://doclite.me/ASSETS/banner.png" name="twitter:image"/>
+<link href="https://doclite.me/ASSETS/favicon.png" rel="apple-touch-icon"/>
+<script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "SoftwareApplication",
@@ -29,116 +30,86 @@
       "description": "Crop images online easily. Select area and crop photos to exact dimensions. Free image cropper."
     }
     </script>
-</head><body>    <nav class="navbar">
-        <div class="navbar-container">
-            <a href="../index.html" class="navbar-logo"><img src="../ASSETS/favicon.png" alt="DocLite Logo" class="navbar-logo-img">DocLite</a>
-            <ul class="navbar-menu">
-                <li><a href="../index.html" class="navbar-link">Home</a></li>
-                <li><a href="../index.html#pdf-tools" class="navbar-link">PDF Tools</a></li>
-                <li><a href="../index.html#image-tools" class="navbar-link">Image Tools</a></li>
-                <li><a href="../index.html#text-tools" class="navbar-link">Text Tools</a></li>
-                <li><a href="../index.html#dev-tools" class="navbar-link">Developer</a></li>
-            </ul>
-        </div>
-    </nav>
+</head><body> <nav class="navbar">
+<div class="navbar-container">
+<a class="navbar-logo" href="../index.html"><img alt="DocLite Logo" class="navbar-logo-img" src="../ASSETS/favicon.png"/>DocLite</a>
+<ul class="navbar-menu">
+<li><a class="navbar-link" href="../index.html">Home</a></li>
+<li><a class="navbar-link" href="../index.html#pdf-tools">PDF Tools</a></li>
+<li><a class="navbar-link" href="../index.html#image-tools">Image Tools</a></li>
+<li><a class="navbar-link" href="../index.html#text-tools">Text Tools</a></li>
+<li><a class="navbar-link" href="../index.html#dev-tools">Developer</a></li>
+</ul>
+</div>
+</nav>
 <div id="ezoic-pub-ad-placeholder-101"></div>
-    <div class="tool-page"><div class="tool-header"><div class="tool-header-icon"><i class="ti ti-crop"></i></div><h1>Crop Image</h1>
-<div id="ezoic-pub-ad-placeholder-102"></div></div><div id="uploadArea"></div><div class="crop-container hidden" id="cropContainer"><div style="flex:1;"><canvas id="preview-canvas"></canvas></div><div class="crop-controls"><h3>Crop Settings</h3><label>X: <input type="number" id="cropX" value="0" class="coord-input control-input"></label><label>Y: <input type="number" id="cropY" value="0" class="coord-input control-input"></label><label>Width: <input type="number" id="cropW" value="100" class="coord-input control-input"></label><label>Height: <input type="number" id="cropH" value="100" class="coord-input control-input"></label><button id="cropBtn" class="btn btn-primary btn-large" style="margin-top:1rem;">Crop</button></div></div><div id="resultsSection" class="hidden"><h2>Cropped Image</h2><div id="resultPreview"></div><button id="downloadBtn" class="btn btn-primary">Download</button></div></div>    
-        <!-- SEO Content Section -->
-    
+<div class="tool-page"><div class="tool-header"><div class="tool-header-icon"><i class="ti ti-crop"></i></div><h1>Crop Image</h1>
+</div><div id="ezoic-pub-ad-placeholder-102"></div><div id="uploadArea"></div><div class="crop-container hidden" id="cropContainer"><div style="flex:1;"><canvas id="preview-canvas"></canvas></div><div class="crop-controls"><h3>Crop Settings</h3><label>X: <input class="coord-input control-input" id="cropX" type="number" value="0"/></label><label>Y: <input class="coord-input control-input" id="cropY" type="number" value="0"/></label><label>Width: <input class="coord-input control-input" id="cropW" type="number" value="100"/></label><label>Height: <input class="coord-input control-input" id="cropH" type="number" value="100"/></label><button class="btn btn-primary btn-large" id="cropBtn" style="margin-top:1rem;">Crop</button></div></div><div class="hidden" id="resultsSection"><h2>Cropped Image</h2><div id="resultPreview"></div><button class="btn btn-primary" id="downloadBtn">Download</button></div></div>
+<!-- SEO Content Section -->
 <div id="ezoic-pub-ad-placeholder-109"></div>
-
-        <h2>Why Use DocLite?</h2>
-        <ul>
-            <li><strong>Fast & Secure:</strong> All processing happens directly in your browser. Your files never leave your device.</li>
-            <li><strong>Free Forever:</strong> No hidden fees, no sign-up required, and no usage limits.</li>
-            <li><strong>High Quality:</strong> We use advanced algorithms to ensure the best possible output quality.</li>
-        </ul>
-
-        <div id="ezoic-pub-ad-placeholder-111"></div>
+<h2>Why Use DocLite?</h2>
+<ul>
+<li><strong>Fast &amp; Secure:</strong> All processing happens directly in your browser. Your files never leave your device.</li>
+<li><strong>Free Forever:</strong> No hidden fees, no sign-up required, and no usage limits.</li>
+<li><strong>High Quality:</strong> We use advanced algorithms to ensure the best possible output quality.</li>
+</ul>
+<div id="ezoic-pub-ad-placeholder-111"></div>
 <h2>Frequently Asked Questions</h2>
-        <div class="faq-item">
-            <h3 class="faq-question">Is this Crop Image tool free?</h3>
-            <p class="faq-answer">Yes, DocLite provides this Crop Image tool completely free of charge.</p>
-        </div>
-        <div class="faq-item">
-            <h3 class="faq-question">Is it safe to use?</h3>
-            <p class="faq-answer">Absolutely. Since DocLite runs entirely in your browser, your files are never uploaded to any server, ensuring 100% privacy.</p>
-        </div>
-    </section>
-    <!-- Related Tools Section -->
-    <section class="related-tools-section"><h2 class="related-tools-title">Related Tools</h2><div class="related-tools-grid"><a href="blur-image.html" class="tool-card"><div class="tool-card-icon"><i class="ti ti-blur"></i></div><h4 class="tool-card-title">Blur Image</h4><p class="tool-card-description">Add blur effect to images</p></a><a href="png-to-jpg.html" class="tool-card"><div class="tool-card-icon"><i class="ti ti-transform"></i></div><h4 class="tool-card-title">PNG to JPG</h4><p class="tool-card-description">Convert PNG to JPG</p></a><a href="resize-image.html" class="tool-card"><div class="tool-card-icon"><i class="ti ti-dimensions"></i></div><h4 class="tool-card-title">Resize Image</h4><p class="tool-card-description">Change image dimensions</p></a><a href="image-to-pdf.html" class="tool-card"><div class="tool-card-icon"><i class="ti ti-file-type-pdf"></i></div><h4 class="tool-card-title">Image to PDF</h4><p class="tool-card-description">Convert images to PDF</p></a></div></section>
+<div class="faq-item">
+<h3 class="faq-question">Is this Crop Image tool free?</h3>
+<p class="faq-answer">Yes, DocLite provides this Crop Image tool completely free of charge.</p>
+</div>
+<div class="faq-item">
+<h3 class="faq-question">Is it safe to use?</h3>
+<p class="faq-answer">Absolutely. Since DocLite runs entirely in your browser, your files are never uploaded to any server, ensuring 100% privacy.</p>
+</div>
 
-            <div id="ezoic-pub-ad-placeholder-103"></div>
+<!-- Related Tools Section -->
+<section class="related-tools-section"><h2 class="related-tools-title">Related Tools</h2><div class="related-tools-grid"><a class="tool-card" href="blur-image.html"><div class="tool-card-icon"><i class="ti ti-blur"></i></div><h4 class="tool-card-title">Blur Image</h4><p class="tool-card-description">Add blur effect to images</p></a><a class="tool-card" href="png-to-jpg.html"><div class="tool-card-icon"><i class="ti ti-transform"></i></div><h4 class="tool-card-title">PNG to JPG</h4><p class="tool-card-description">Convert PNG to JPG</p></a><a class="tool-card" href="resize-image.html"><div class="tool-card-icon"><i class="ti ti-dimensions"></i></div><h4 class="tool-card-title">Resize Image</h4><p class="tool-card-description">Change image dimensions</p></a><a class="tool-card" href="image-to-pdf.html"><div class="tool-card-icon"><i class="ti ti-file-type-pdf"></i></div><h4 class="tool-card-title">Image to PDF</h4><p class="tool-card-description">Convert images to PDF</p></a></div></section>
+<div id="ezoic-pub-ad-placeholder-103"></div>
 <footer class="footer">
-        <div class="footer-container">
-            <div class="footer-column">
-                <h3>DocLite</h3>
-                <p class="footer-description">Free online document tools. Convert, compress, and optimize files directly in your browser.</p>
-                <div class="footer-social">
-                    <a href="https://github.com" target="_blank" class="social-link" aria-label="GitHub"><i class="ti ti-brand-github"></i></a>
-                    <a href="https://instagram.com" target="_blank" class="social-link" aria-label="Instagram"><i class="ti ti-brand-instagram"></i></a>
-                    <a href="https://facebook.com" target="_blank" class="social-link" aria-label="Facebook"><i class="ti ti-brand-facebook"></i></a>
-                    <a href="https://linkedin.com" target="_blank" class="social-link" aria-label="LinkedIn"><i class="ti ti-brand-linkedin"></i></a>
-                </div>
-            </div>
-            <div class="footer-column">
-                <h3>Popular</h3>
-                <ul class="footer-links">
-                    <li><a href="compress-pdf.html" class="footer-link">Compress PDF</a></li>
-                    <li><a href="pdf-to-jpg.html" class="footer-link">PDF to JPG</a></li>
-                    <li><a href="compress-image.html" class="footer-link">Compress Image</a></li>
-                    <li><a href="merge-pdf.html" class="footer-link">Merge PDF</a></li>
-                    <li><a href="word-counter.html" class="footer-link">Word Counter</a></li>
-                </ul>
-            </div>
-            <div class="footer-column">
-                <h3>Company</h3>
-                <ul class="footer-links">
-                    <li><a href="../about.html" class="footer-link">About Us</a></li>
-                    <li><a href="../contact.html" class="footer-link">Contact</a></li>
-                    <li><a href="../terms.html" class="footer-link">Terms of Service</a></li>
-                    <li><a href="../privacy.html" class="footer-link">Privacy Policy</a></li>
-                </ul>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <h4>&copy; 2025 DocLite. All rights reserved.</h4>
-        </div>
-    </footer><script defer src="../js/components.js"></script><script>
+<div class="footer-container">
+<div class="footer-column">
+<h3>DocLite</h3>
+<p class="footer-description">Free online document tools. Convert, compress, and optimize files directly in your browser.</p>
+<div class="footer-social">
+<a aria-label="GitHub" class="social-link" href="https://github.com" target="_blank"><i class="ti ti-brand-github"></i></a>
+<a aria-label="Instagram" class="social-link" href="https://instagram.com" target="_blank"><i class="ti ti-brand-instagram"></i></a>
+<a aria-label="Facebook" class="social-link" href="https://facebook.com" target="_blank"><i class="ti ti-brand-facebook"></i></a>
+<a aria-label="LinkedIn" class="social-link" href="https://linkedin.com" target="_blank"><i class="ti ti-brand-linkedin"></i></a>
+</div>
+</div>
+<div class="footer-column">
+<h3>Popular</h3>
+<ul class="footer-links">
+<li><a class="footer-link" href="compress-pdf.html">Compress PDF</a></li>
+<li><a class="footer-link" href="pdf-to-jpg.html">PDF to JPG</a></li>
+<li><a class="footer-link" href="compress-image.html">Compress Image</a></li>
+<li><a class="footer-link" href="merge-pdf.html">Merge PDF</a></li>
+<li><a class="footer-link" href="word-counter.html">Word Counter</a></li>
+</ul>
+</div>
+<div class="footer-column">
+<h3>Company</h3>
+<ul class="footer-links">
+<li><a class="footer-link" href="../about.html">About Us</a></li>
+<li><a class="footer-link" href="../contact.html">Contact</a></li>
+<li><a class="footer-link" href="../terms.html">Terms of Service</a></li>
+<li><a class="footer-link" href="../privacy.html">Privacy Policy</a></li>
+</ul>
+</div>
+</div>
+<div class="footer-bottom">
+<h4>© 2025 DocLite. All rights reserved.</h4>
+</div>
+</footer><script defer="" src="../js/components.js"></script><script>
     document.addEventListener('DOMContentLoaded', function() {
         (function() {let img=null,originalBlob=null,filename='';const canvas=document.getElementById('preview-canvas'),ctx=canvas.getContext('2d');document.getElementById('uploadArea').appendChild(DocLiteComponents.createUploadArea({accept:'image/*',multiple:false,onFileSelect:f=>{const file=f[0];filename=file.name;const reader=new FileReader();reader.onload=e=>{img=new Image();img.onload=()=>{canvas.width=img.width;canvas.height=img.height;ctx.drawImage(img,0,0);document.getElementById('cropContainer').classList.remove('hidden');document.getElementById('cropW').value=img.width;document.getElementById('cropH').value=img.height;};img.src=e.target.result;};reader.readAsDataURL(file);}}));document.getElementById('cropBtn').onclick=()=>{const x=parseInt(document.getElementById('cropX').value)||0,y=parseInt(document.getElementById('cropY').value)||0,w=parseInt(document.getElementById('cropW').value)||100,h=parseInt(document.getElementById('cropH').value)||100;const c=document.createElement('canvas');c.width=w;c.height=h;c.getContext('2d').drawImage(img,x,y,w,h,0,0,w,h);c.toBlob(blob=>{originalBlob=blob;const url=URL.createObjectURL(blob);document.getElementById('resultPreview').innerHTML=`<img src="${url}" style="max-width:100%;border:2px solid var(--primary);" loading="lazy">`;document.getElementById('resultsSection').classList.remove('hidden');document.getElementById('downloadBtn').onclick=()=>DocLiteComponents.downloadFile(blob,filename);},'image/jpeg',0.95);};})();
     });
-    </script><script defer src="../js/cookie-consent.js"></script>
-
-
-
-
+    </script><script defer="" src="../js/cookie-consent.js"></script>
 <script>
     ezstandalone.cmd.push(function () {
         ezstandalone.showAds(101, 102, 103, 109, 111);
     });
 </script>
 </body></html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
