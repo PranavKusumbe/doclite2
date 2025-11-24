@@ -239,12 +239,12 @@ img {
 
 @media (max-width: 768px) {
   .hero {
-    padding: 4rem 1rem;
+    padding: 2rem 1rem; /* Reduced from 4rem */
   }
   
   .hero-title {
-    font-size: 2.5rem; /* Fallback */
-    font-size: clamp(2rem, 8vw, 3rem);
+    font-size: 2rem; /* Fallback */
+    font-size: clamp(1.75rem, 7vw, 2.5rem); /* Slightly smaller */
   }
 }
 
@@ -316,7 +316,28 @@ img {
 
 @media (max-width: 480px) {
   .tools-grid, .related-tools-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, 1fr); /* 2 columns on mobile */
+    gap: 0.75rem; /* Smaller gap */
+  }
+  
+  .tool-card {
+    padding: 1rem; /* Smaller padding */
+  }
+  
+  .tool-card-icon {
+    width: 40px;
+    height: 40px;
+    font-size: 1.25rem;
+    margin-bottom: 0.75rem;
+  }
+  
+  .tool-card-title {
+    font-size: 0.9rem;
+  }
+  
+  .tool-card-description {
+    font-size: 0.75rem;
+    line-height: 1.3;
   }
 }
 
@@ -374,12 +395,12 @@ img {
 .tool-page {
   max-width: 1000px;
   margin: 0 auto;
-  padding: 3rem 1.5rem;
+  padding: 2rem 1.5rem; /* Reduced top padding */
 }
 
 .tool-header {
   text-align: center;
-  margin-bottom: 3rem;
+  margin-bottom: 2rem; /* Reduced from 3rem */
 }
 
 .tool-header-icon {
@@ -392,14 +413,14 @@ img {
   align-items: center;
   justify-content: center;
   font-size: 2.5rem;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem; /* Reduced from 1.5rem */
 }
 
 .upload-area {
   background: var(--color-surface);
   border: 2px dashed var(--color-border);
   border-radius: var(--radius-xl);
-  padding: 4rem 2rem;
+  padding: 3rem 1.5rem; /* Reduced padding */
   text-align: center;
   cursor: pointer;
   transition: all 0.2s;
@@ -412,7 +433,18 @@ img {
 
 @media (max-width: 768px) {
   .tool-page {
+    padding: 1.5rem 1rem;
+    overflow-x: hidden; /* Prevent horizontal scroll */
+  }
+  
+  .upload-area {
     padding: 2rem 1rem;
+  }
+  
+  .tool-header-icon {
+    width: 60px;
+    height: 60px;
+    font-size: 2rem;
   }
 }
 
@@ -588,6 +620,9 @@ img {
 .upload-subtext {
   color: var(--color-text-muted);
   font-size: 0.875rem;
+  word-wrap: break-word; /* Allow wrapping */
+  overflow-wrap: break-word;
+  max-width: 100%;
 }
 
 /* File List */
@@ -770,66 +805,134 @@ img {
    Typography & Content Restoration
    =========================== */
 
-/* Restore spacing for content outside specific containers */
+/* 1. Root Level Elements (Direct children of body) 
+   These need side padding because body has none by default */
 body > h2, 
 body > h3, 
 body > p, 
 body > ul, 
-body > ol {
+body > ol,
+body > [id^="ezoic-pub-ad-placeholder"] {
     max-width: 800px;
     margin-left: auto;
     margin-right: auto;
     padding-left: 1.5rem;
     padding-right: 1.5rem;
+    box-sizing: border-box;
 }
 
-body > h2 {
-    font-size: 1.75rem;
-    font-weight: 700;
-    margin-top: 3rem;
-    margin-bottom: 1.5rem;
-    color: var(--color-text-main);
-}
-
-body > h3 {
-    font-size: 1.25rem;
-    font-weight: 600;
-    margin-top: 2rem;
-    margin-bottom: 1rem;
-    color: var(--color-text-main);
-}
-
-body > p {
-    margin-bottom: 1rem;
-    line-height: 1.7;
-    color: var(--color-text-muted);
-}
-
-body > ul, 
-body > ol {
-    margin-bottom: 2rem;
-    color: var(--color-text-muted);
-    list-style-position: inside;
-}
-
-body > ul li, 
-body > ol li {
-    margin-bottom: 0.75rem;
-}
-
-body > ul li strong, 
-body > ol li strong {
-    color: var(--color-text-main);
-}
-
-/* FAQ Items at root level */
-body > .faq-item {
+/* 2. Tool Page Elements (Inside .tool-page)
+   These DO NOT need side padding because .tool-page already has it.
+   We just center them and limit width. */
+.tool-page > h2,
+.tool-page > h3,
+.tool-page > p,
+.tool-page > ul,
+.tool-page > ol,
+.tool-page > [id^="ezoic-pub-ad-placeholder"] {
     max-width: 800px;
     margin-left: auto;
     margin-right: auto;
-    padding: 0 1.5rem 2rem 1.5rem;
-    margin-bottom: 2rem;
-    border-bottom: 1px solid var(--color-border);
+    padding-left: 0;
+    padding-right: 0;
+}
+
+/* Allow top ad to be wider if needed, but centered */
+body > #ezoic-pub-ad-placeholder-101 {
+    max-width: var(--container-width);
+}
+
+/* Headings */
+body > h2, .tool-page > h2 {
+    font-size: 1.75rem;
+    font-weight: 700;
+    margin-top: 1.5rem; /* Reduced from 2rem */
+    margin-bottom: 1rem;
+    color: var(--color-text-main);
+    text-align: center;
+    border-bottom: 2px solid var(--color-border);
+    padding-bottom: 0.75rem;
+}
+
+body > h3, .tool-page > h3 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-top: 1.25rem; /* Reduced from 1.5rem */
+    margin-bottom: 0.75rem;
+    color: var(--color-text-main);
+}
+
+/* Paragraphs */
+body > p, .tool-page > p {
+    margin-bottom: 0.75rem; /* Reduced from 1rem */
+    line-height: 1.6;
+    color: var(--color-text-muted);
+}
+
+/* Lists */
+body > ul, body > ol {
+    margin-bottom: 1.5rem;
+    color: var(--color-text-muted);
+    list-style-position: outside;
+    padding-left: 2rem; /* Standard padding */
+}
+
+.tool-page > ul, .tool-page > ol {
+    margin-bottom: 1.5rem;
+    color: var(--color-text-muted);
+    list-style-position: outside;
+    padding-left: 2rem; /* Increased from 1.25rem for better bullet spacing */
+    margin-left: 0; /* Reset margin */
+}
+
+body > ul li, .tool-page > ul li,
+body > ol li, .tool-page > ol li {
+    margin-bottom: 0.5rem;
+}
+
+body > ul li strong, .tool-page > ul li strong,
+body > ol li strong, .tool-page > ol li strong {
+    color: var(--color-text-main);
+}
+
+/* FAQ Items - Global Styling */
+.faq-item {
+    background: #fff;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    padding: 1.25rem;
+    margin-bottom: 1rem;
+    box-shadow: var(--shadow-sm);
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.faq-question {
+    font-size: 1.05rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: var(--color-text-main);
+}
+
+.faq-answer {
+    color: var(--color-text-muted);
+    line-height: 1.5;
+    font-size: 0.95rem;
+}
+
+/* FAQ Section Container */
+.faq-section {
+    max-width: 800px;
+    margin: 2rem auto; /* Reduced from 2.5rem */
+}
+
+.faq-title {
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    color: var(--color-text-main);
 }
 
 /* Ezoic Ad Placeholders */
@@ -837,23 +940,56 @@ body > .faq-item {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 2rem auto;
-    min-height: 100px; /* Prevent layout shift */
+    margin: 1rem auto; /* Reduced from 1.5rem */
+    min-height: 100px;
     width: 100%;
-    max-width: 100%;
     overflow: hidden;
+    padding: 0;
 }
 
 /* Mobile adjustments */
 @media (max-width: 768px) {
-    body > h2 {
-        font-size: 1.5rem;
-        margin-top: 2rem;
+    body > h2, .tool-page > h2 {
+        font-size: 1.35rem;
+        margin-top: 1rem; /* Reduced from 1.5rem */
     }
     
+    /* Root elements padding on mobile */
+    body > h2, 
+    body > h3, 
+    body > p, 
+    body > ul, 
+    body > ol {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+    
+    /* Tool page elements padding on mobile - keep 0 */
+    .tool-page > h2,
+    .tool-page > h3,
+    .tool-page > p,
+    .tool-page > ul,
+    .tool-page > ol {
+        padding-left: 0;
+        padding-right: 0;
+    }
+    
+    body > ul, body > ol,
+    .tool-page > ul, .tool-page > ol {
+        padding-left: 1.5rem; /* Tighter but sufficient for mobile */
+    }
+
     [id^="ezoic-pub-ad-placeholder"] {
-        min-height: 250px; /* Taller for mobile ads */
-        margin: 1rem auto;
+        min-height: 100px; /* Reduced from 250px to fix huge gaps */
+        margin: 0.5rem auto; /* Minimal margin */
+    }
+    
+    .related-tools-section {
+        padding: 1.5rem 1rem;
+    }
+    
+    .faq-item {
+        padding: 1rem;
     }
 }
 

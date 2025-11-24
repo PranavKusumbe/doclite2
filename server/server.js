@@ -21,6 +21,11 @@ const upload = multer({ dest: 'uploads/' });
 app.use(cors());
 app.use(express.json());
 
+// Ads.txt Redirect for Ezoic
+app.get('/ads.txt', (req, res) => {
+    res.redirect(301, 'https://srv.adstxtmanager.com/80740/doclite.me');
+});
+
 // Audio Compression endpoint
 app.post('/api/compress-audio', upload.single('audio'), async (req, res) => {
     try {
